@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite 1" >
+	<listeners>
+		<listener class-name="utility.JyperionListener"></listener>
+	</listeners>
+	<test name="Regression Test">
+	<classes>
+
+		<!-- Test Case for setting snapshot folder and send mail after suite run -->
+			<class name="testCases.SS_SetSnapshotFolder_SendMail" />
+
+
+
+
+
+			
+           
+
+		<!-- FCC Test Cases -->
+
+
+		<class name="testCases.SS_CartPage_Public_Verify_NavigationToCheckOut_Functionality" /> 
+
+
+			
+
+
+
+
+
+
+			
+
+
+ 
+	
+			
+</classes>
+	</test>
+</suite> <!-- Suite -->

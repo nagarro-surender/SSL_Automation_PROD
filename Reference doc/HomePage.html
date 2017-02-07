@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+<TITLE>Regression Test Suite</TITLE>
+ <HTA:APPLICATION ID="oMyApp" 
+	    APPLICATIONNAME="Application Executer" 
+	    BORDER="no"
+	    CAPTION="no"
+	    SHOWINTASKBAR="yes"
+	    SINGLEINSTANCE="yes"
+	    SYSMENU="yes"
+	    SCROLL="no"
+	    WINDOWSTATE="normal">
+<style>
+.hot-container p { margin-top: 10px; }
+a { text-decoration: none; margin: 0 10px; }
+
+.hot-container {
+	min-height: 100px;
+	margin-top: 100px;
+	width: 100%;
+	text-align: left;
+}
+
+a.btn {
+	display: inline-block;
+	color: #666;
+	background-color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 10px 30px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 3px;
+}
+
+	a.btn:hover {
+		background-color: #e3e3e3;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+	a.btn:active {
+		background-color: #CCC;
+		border-color: rgba(0,0,0,0.9);
+	}
+	p { color: #000000; 
+	font-size: 23px; 
+	font-family: "Libre Baskerville",serif; 
+	line-height: 35px;
+	text-shadow: 0 1px 1px #fff; 
+	padding-top: 20px;
+	margin: 0 5px 0 5px;
+	}
+	
+	h1 { color: #4d4d4d; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; line-height: 48px; margin: 0; 
+	}
+	
+	ul.b {
+    list-style-type: square;
+	color: #000000; 
+	font-size: 23px; 
+	font-family: "Libre Baskerville",serif; 
+	line-height: 35px;
+	text-shadow: 0 1px 1px #fff; 
+	padding-top: 20px;
+	margin: 0 5px 0 5px;
+}
+
+</style>
+
+<script type="text/javascript" language="javascript">
+    function RunFile() {
+   /* alert("Hello! I am an alert box!");*/
+   WshShell = new ActiveXObject("WScript.Shell");
+   /*WshShell.Run("c:/windows/system32/notepad.exe", 1, false);*/
+   WshShell.Run("C:/Client Projects/ShoppersStop/run", 1, false);
+	    }
+</script>
+</HEAD>
+
+
+
+<BODY  style="background-color:#FFFFFF; color:#353833;font-family:'DejaVu Sans', Arial, Helvetica, sans-serif;font-size:14px;margin:0;">
+<div style="width:75%; margin: auto;background-color:#F8F9F9 ; min-height:800px ">
+<div id="introduction" style="background-color:#DFDFDF;text-align:center;padding:10px ;min-height:75px;">
+<h1>Shoppers Stop Limited Automation Suite</h1>
+</div> 
+ <div class="hot-container" style="margin: 10 0 0 0;">
+	<p>
+	 The page is a quick reference to Shoppers Stop Limited Automation Test Suite.
+	 There are two options provided below.The first option is to run the test suite and the other option is to visit the test suite documentation page.
+	 	
+<ul class="b">
+  <li>The <b>Execute Test Suite</b> button - This button executes a batch file that compile and run all java files needed for test suite execution through command line.</li>
+  <li> The <b>Test Suite Documentation</b> button - This button takes you to test suite documentation page.</li>
+  </ul>	 
+	 <p>Please select one of the below options to proceed.</P>
+	 </p><br><br>
+	 </div>
+	<div id="links" style="text-align:center;">
+	<a href="#" class="btn" onClick="RunFile()">Execute Test Suite</a><br><br>		
+	<a href="C:\Client Projects\ShoppersStop\Regression_Doc.html" class="btn">Test Suite Documentation</a>
+	</div>
+</div>
+
+ </BODY>
+ </HTML>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite 1]">
+  <listeners>
+    <listener class-name="utility.JyperionListener"/>
+  </listeners>
+  <test name="Regression Test(failed)">
+    <classes>
+      <class name="testCases.SS_SetSnapshotFolder_SendMail">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setSnapShotFolder"/>
+        </methods>
+      </class> <!-- testCases.SS_SetSnapshotFolder_SendMail -->
+      <class name="testCases.SS_CartPage_Public_Verify_NavigationToCheckOut_Functionality">
+        <methods>
+          <include name="setSnapShotFolder"/>
+          <include name="main"/>
+          <include name="afterMethod"/>
+          <include name="BeforeMethod"/>
+        </methods>
+      </class> <!-- testCases.SS_CartPage_Public_Verify_NavigationToCheckOut_Functionality -->
+    </classes>
+  </test> <!-- Regression Test(failed) -->
+</suite> <!-- Failed suite [Suite 1] -->

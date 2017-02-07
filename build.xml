@@ -1,0 +1,47 @@
+<project name="ShoppersStop" basedir=".">
+       <!-- ========== Initialize Properties =================================== -->
+       <!-- set global properties for build -->
+       <property name="basedir" value="." />
+       <property name="libs" value="${basedir}/libs" />
+       <property name="src" value="${basedir}/src" />
+       <property name="bin" value="${basedir}/bin" />
+       <property name="report-dir" value="${basedir}/test-output" />
+       
+       <!-- ====== Set the classpath ====  -->
+       <path id="classpath">
+              <pathelement location="${bin}" />
+              <fileset dir="${libs}">
+                     <include name="*.jar" />
+              </fileset>
+       </path>
+       
+       <!-- Delete directories  -->
+       <target name="delete-dir">
+              <delete dir="${bin}" />
+              <delete dir="${report-dir}" />
+       </target>
+       
+       <!-- Creating directories -->
+       <target name="create" depends="delete-dir">
+              <mkdir dir="${bin}" />
+              <mkdir dir="${report-dir}" />
+       </target>
+       
+       <!-- Compile the java code from ${src} into ${bin} -->
+       <target name="compile" depends="create">
+              <javac srcdir="${src}" classpathref="classpath" includeAntRuntime="No" destdir="${bin}" />
+              <echo> /* Compiled Directory Classes */ </echo>
+       </target>
+       
+       <!-- Runs the file and generates Reportng report for TestNG-->
+       <taskdef name="testng" classname="org.testng.TestNGAntTask" classpathref="classpath" />
+       
+       
+       <target name="run" depends="compile">
+       <testng outputdir="${report-dir}" classpathref="classpath" useDefaultListeners="true">
+              
+                     <xmlfileset dir="${basedir}" includes="testng.xml" />
+              </testng>
+       </target>
+</project>
+

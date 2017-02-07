@@ -1,0 +1,2475 @@
+<HTML>
+<HEAD>
+<TITLE>Regression Test Suite Document</TITLE>
+
+		<style>
+		
+.Roundcorners {
+   /* border-radius: 25px;
+    border: 1px solid #000000;*/
+    padding: 20px;
+    width:auto;
+    height:75px;
+	text-align:center;
+	background-color:#DFDFDF;
+	
+}
+table { 
+color: #333;
+font-family: Helvetica, Arial, sans-serif;
+width: 100%; 
+border-collapse: collapse; 
+border-spacing: 0; 
+
+}
+
+td, th { 
+border: 1px solid transparent; /* No more visible border */
+height: 30px; 
+transition: all 0.3s;  /* Simple transition for hover effect */
+}
+
+th {
+background: #DFDFDF;  /* Darken header a bit */
+font-weight: bold;
+}
+
+td {
+background: #FAFAFA;
+text-align: left;
+}
+
+h2{
+text-align:center;
+
+}
+
+/* Cells in even rows (2,4,6...) are one color */ 
+tr:nth-child(even) td { background: #F1F1F1; }   
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */ 
+tr:nth-child(odd) td { background: #FEFEFE; }  
+
+/*tr td:hover { background: #666; color: #FFF; } *//* Hover cell effect! */
+button {
+  margin: 0 auto;
+  font-size: 13px;
+  padding: 0.25rem 0.50rem;
+  display: inline;
+  background-color: #919191;
+  border: 1px solid transparent;
+  color: #ffffff;
+  font-weight:bold;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: #009ac9;
+  border-color: #009ac9;
+}
+
+
+		</style>
+</HEAD>
+<script src="jquery-2.2.4.min.js"></script>
+<script>
+$(document).ready(function(){
+    
+   $("#infocontent").hide();
+    $("#infocontent div").hide();
+	   
+        $('#linkwrapper button[id]').click(function(){
+        
+        var vsubmen = this.id +"content";  
+        
+        if( $("#infocontent").is(":visible") == false ) {
+            $("#" + vsubmen).show('fast',function() {
+                $("#infocontent").slideDown();
+            });
+        } else if ( $("#" + vsubmen).is(":visible") == false ) {
+        $("#infocontent").slideUp('slow',function(){
+            $("#infocontent div").hide();
+            $("#" + vsubmen).show();
+            $("#infocontent").slideDown('slow');    
+            });
+        } else {
+        $("#infocontent").slideUp('slow',function(){
+            $("#infocontent div").hide();
+        });
+        }
+        return false;
+    });
+
+});
+</script>
+</head>
+
+<BODY  style="background-color:#FFFFFF; color:#353833;font-family:'DejaVu Sans', Arial, Helvetica, sans-serif;font-size:14px;margin:0;">
+
+<div style="width:75%; margin: auto;background-color:#F8F9F9 ;  padding: 10px; min-height:800px ">
+ 
+ 
+ <div id="linkwrapper" class="Roundcorners">
+ 
+ <button id="link4" >SSL Header</button>
+<button id="link5" >SSL Footer</button>
+<button id="link3" >Home Page</button>
+<button id="link8" >MyAccount Page</button>
+<button id="link2" >Product Listing Page</button>
+<button id="link9" >Product Details Page</button>
+<button id="link7" >Login and Registration Page</button><br><br>
+<button id="link1" >Cart Page </button>
+<button id="link10">Checkout Page</button>
+<button id="link6" >First Citizen Card</button>
+</div>
+
+<div id="infocontent" style="text-align=center;border:2px;">
+    <div id="link1content">
+ <!--<h2 style="font-style: italic;font-weight: bold;text-align:center;">This tab contains detailed information about Cart Page test cases</h2>-->
+  <h2>SS_CartPage_Private_Verify_CartPage_ApplyCoupon_Functionality</h2>
+  <p style="font-size:19px">This Test Case verifies Apply Coupon field on the Cart page for a registered user.</p>
+  <TABLE width="100%" border=1 ">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+ <tr><td>password</td><td>Use password</td></tr> 
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+ <tr><td>promoCode</td><td>Promotional coupon code to be applied</td></tr>
+ <tr><td>invalidPromoCode</td><td>Invalid Promotional coupon code to be applied for validation purpose</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 >SS_CartPage_Private_Verify_ShopingCart_Details</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Mini Cart pop up details for a registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>Use password</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_CartPage_Private_Verify_CartPage_FromYourWishlist_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies From Your Wishlist section on the Cart page for a registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+ <tr><td>password</td><td>Use password</td></tr> 
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+
+ 
+  
+  <h2 style="text-align:center;">SS_CartPage_Private_Verify_CartPage_MoveToWishlist_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Move to Wishlist functionality on the Cart page for a registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+ <tr><td>password</td><td>Use password</td></tr> 
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_CartPage_Private_Verify_CartPage_RemoveProduct_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Removing product from the Cart page for a registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+ <tr><td>password</td><td>Use password</td></tr> 
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_CartPage_Private_Verify_DeliveryOptions</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Pin Code related validations on the Cart page for a registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+ <tr><td>password</td><td>Use password</td></tr> 
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+ <tr><td>postCode</td><td>Pin code to be filled on Cart page(Should have COD option)</td></tr>
+ <tr><td>alternativePostCode</td><td>Pin code to be filled on Cart page(Should not have COD option)</td></tr>
+ <tr><td>invalidPostCode</td><td>Pin code to be filled on Cart page(Should not have delivery option)</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_CartPage_Private_Verify_RemoveCartProduct</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies removing product from mini cart functionality for a registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+ <tr><td>password</td><td>Use password</td></tr> 
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  <h2 style="text-align:center;">SS_CartPage_Private_Verify_ShoppingBag_Page_Attributes</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies default page attributes on Cart page for a registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>Use password</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+    
+  <h2 style="text-align:center;">SS_CartPage_Public_Verify_CartPage_AddGiftMessage_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Add gift message functionality for a guest user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>firstName</td><td>Sender name on the add gift message form</td></tr>
+  <tr><td>alternativeFirstName</td><td>Updated Sender name on the add gift message form</td></tr> 
+  <tr><td>description</td><td>Gift message on the add gift message form</td></tr>
+  <tr><td>updatedDescription</td><td>Updated Gift message on the add gift message form</td></tr>
+  <tr><td>receiver</td><td>Receiver name on the add gift message form</td></tr>
+  <tr><td>UpdatedReceiver</td><td>Updated Receiver name on the add gift message form</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_CartPage_Public_Verify_CartPage_RemoveGiftMessage_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Remove gift message functionality for a guest user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>firstName</td><td>Sender name on the add gift message form</td></tr>
+  <tr><td>description</td><td>Gift message on the add gift message form</td></tr>
+  <tr><td>receiver</td><td>Receiver name on the add gift message form</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_CartPage_Public_Verify_Edit_Cart_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Edit/Update Cart functionality for a guest user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_CartPage_Public_Verify_NavigationToCheckOut_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Navigation to Checkout page via Cart page for a guest user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_CartPage_Public_Verify_ShopingCart_ItemCount</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Shopping bag item count for a guest user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+
+  
+  <h2 style="text-align:center;">SS_CartPage_Private_Verify_ShopingCart_ItemCount</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Shoping bag item count for a registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>Use password</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  </div>
+       
+    <div id="link2content">
+	
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_AddtoWishList_RegisteredUser</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies adding product to wishlist from PLP for a registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+ <tr><td>password</td><td>Use password</td></tr> 
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_BreadCrumb</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies PLP bread crumb</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  
+ 
+
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_Clear_Refinements_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies clear refinement link available for each filter on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+ <tr><td>defaultFilter1</td><td>Default filter available above product images(like Category,fit, neck etc.)</td></tr>
+ <tr><td>defaultFilterValue1</td><td>Default filter value available above product images</td></tr>
+ <tr><td>defaultFilter2</td><td>Default filter available above product images(like Category,fit, neck etc.)</td></tr>
+ <tr><td>defaultFilterValue2</td><td>Default filter value available above product images</td></tr>
+ <tr><td>defaultFilter3</td><td>Default filter available above product images(like Category,fit, neck etc.)</td></tr>
+ <tr><td>defaultFilterValue3</td><td>Default filter value available above product images</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_ClearAll_Refinements_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies clear all refinement link available for on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+ <tr><td>brandName</td><td>Brand name available under primary filters on left side</td></tr>
+ <tr><td>productPrice</td><td>Price range available under primary filters on left side</td></tr>
+ <tr><td>productColor</td><td>Product color available under primary filters on left side</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_Default_Attributes_Filter_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Default Attributes Filters for products on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+ <tr><td>defaultFilter1</td><td>Default filter available above product images(like Category,fit, neck etc.)</td></tr>
+ <tr><td>defaultFilterValue1</td><td>Default filter value available above product images</td></tr>
+ <tr><td>defaultFilter2</td><td>Default filter available above product images(like Category,fit, neck etc.)</td></tr>
+ <tr><td>defaultFilterValue2</td><td>Default filter value available above product images</td></tr>
+ <tr><td>defaultFilter3</td><td>Default filter available above product images(like Category,fit, neck etc.)</td></tr>
+ <tr><td>defaultFilterValue3</td><td>Default filter value available above product images</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_DefaultContent</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Default page conditions on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_Filter_On_Off_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Filter On/Off link functionality on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_LoadMore_Link_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies load more link functionality on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_PrimaryFilter_DropDown_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Drop down link functionality for Primary Filters on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_PrimaryFilter_On_Sale_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies On Sale primary filter selection functionality on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+ <tr><td>onSaleValue</td><td>On Sale filter available on the left side of product images.</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_PrimaryFilter_Select_Brand_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Brand name primary filter selection functionality on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+ <tr><td>brandName</td><td>Brand filter available on the left side of product images.</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_PrimaryFilter_Select_Color_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Color primary filter selection functionality on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+ <tr><td>productColor</td><td>Color filter available on the left side of product images.</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_PrimaryFilter_Select_Price_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Price primary filter selection functionality on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+ <tr><td>productPrice</td><td>Price filter available on the left side of product images.</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_Product_Details</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Product specific details for specific product on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_Promotion_Image_Link</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Promotion Images link on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_QuickView_Details</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Quick View section for product on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_QuickView_Link</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Quick View link on product image on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_PLP_Verify_RemoveFromWishlist_QuickView_RegisteredUser</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Removing product from wishlist in Quick view section for product on PLP.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+ <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+ <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  </table>
+  <br>
+  <br>
+	
+	</div>
+	
+    <div id="link3content">
+	
+
+  
+  <h2 style="text-align:center;">SS_HomePage_Public_Verify_GridBox_Link</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Grid Box details links on Home Page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_HomePage_Public_Verify_Header_Banner_Footer_Section</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Header, Footer and Banner containers Home Page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_HomePage_Public_Verify_MainMenu_Links</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies level one categories on main menu on Home Page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Level one product categories available under main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_HomePage_Public_Verify_MainMenu_ToolTip</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies level one categories tool tip values on main menu on Home Page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Level one product categories tool tip values available under main menu</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_HomePage_Public_Verify_NewsLetterSubscribe_Field</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Newsletter subscribe field Home Page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_HomePage_Public_Verify_NewsLetterSubscribe_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Newsletter subscribe field functionality on Home Page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>email id for newsletter subscription</td></tr>
+  <tr><td>invalidEmailId</td><td>Invalid email id to check newsletter subscription validation</td></tr>
+  <tr><td>message1</td><td>To check empty email id field message</td></tr>
+  <tr><td>message2</td><td>to check invalid email id field message</td></tr>
+  <tr><td>message3</td><td>To check successful subscription of newsletter message</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+	</div>
+	
+	 <div id="link4content">
+	 
+  
+  <h2 style="text-align:center;">SS_Header_Private_Verify_WishlistAlert_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Wishlist alert functionality for registered user</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the user</td></tr>
+  <tr><td>password</td><td>password of the user</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_MiniCart_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Mini cart details.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_Notification_Alert_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Notification Alerts functionality.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_Notification_Alert_Link</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Notification Alert link functionality on main header.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_SearchBox_Field_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Search Box field functionality on main header.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+   <tr><td>searchField</td><td>Search criteria to be entered into search field</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_SearchBox_Field</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Search Box field on main header.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_SSLogo_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies SSL logo functionality on main header.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_StoreLocatore_Link_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Store Locator link functionality on main header.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_StoreLocatore_Page_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Store Locator Page details.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>city</td><td>City name in where to search the store</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_TrackOrder_Link_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Track Order link functionality on main header.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_TrackOrder_Page_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Track Order page details.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_WishlistAlert_Functionality</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Wishlist Alert functionality for guest user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+
+  
+  <h2 style="text-align:center;">SS_Header_Public_Verify_WishlistAlert_Link</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Wishlist Alert link functionality for guest user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+	 </div>
+	 
+	  <div id="link5content">
+	  
+  
+  <h2 style="text-align:center;">SS_Footer_CustomerRelated_Verify_All_Links_Are_Clickable</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Customer Related Footer links</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  
+ 
+  
+  <h2 style="text-align:center;">SS_Footer_FirstCitizenRelated_Verify_All_Links_Are_Clickable</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies First Citizen Related Footer links</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  
+ 
+
+  
+  <h2 style="text-align:center;">SS_Footer_FollowUsRelated_Verify_All_Links_Are_Clickable</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Follow Us Related Footer links</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Footer_PolicyRelated_Verify_All_Links_Are_Clickable</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Policy Related Footer links</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  
+ 
+  
+  <h2 style="text-align:center;">SS_Footer_ReachUsRelated_Verify_All_Links_Are_Clickable</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Reach Us Related Footer links</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  
+ 
+  
+  <h2 style="text-align:center;">SS_Footer_StoreAndSiteRelated_Verify_All_Links_Are_Clickable</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Store and Site Related Footer links</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  </table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Forgot_Password_CorrectFormNavigation</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies various fields present on Forgot password form</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:20px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr></table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Forgot_Password_Verify_Fields</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies various fields present on Forgot password form</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:20px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr></table>
+  <br>
+  <br>
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_Forgot_Password</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies forgot password functionality</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">Parameter List</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the user</td></tr>
+  </table>
+  <br>
+  <br>
+
+	  
+	  </div>
+	  
+	  
+	   <div id="link6content">
+
+  
+  <h2 style="text-align:center;">SS_FCC_Private_Verify_AddToBagFCC_GuestUser</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies adding FCC card to bag for guest user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>User password</td></tr> 
+  <tr><td>confirmPassword</td><td>Confirm password for registration purpose</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>title</td><td>Title detail for FCC registration form</td></tr>
+  <tr><td>firstName</td><td>First Name for FCC registration form</td></tr>
+   <tr><td>lastName</td><td>Last Name for FCC registration form</td></tr>
+   <tr><td>alternativeFirstName</td><td>Name on card for FCC registration form</td></tr>
+   <tr><td>DOB</td><td>DOB for FCC registration form</td></tr>
+   <tr><td>homeSTD</td><td>Home STD code for FCC registration form</td></tr>
+   <tr><td>officeSTD</td><td>Office STD code for FCC registration form</td></tr>
+   <tr><td>homeLandline</td><td>Home Landline for FCC registration form</td></tr>
+   <tr><td>officeLandline</td><td>Office LAndline for FCC registration form</td></tr>
+   <tr><td>mobileNumber</td><td>Mobile Number for FCC registration form</td></tr>
+   <tr><td>address</td><td>Address for delivery option on checkout page</td></tr>
+   <tr><td>landmark</td><td>Landmark for delivery option on checkout page</td></tr>
+   <tr><td>postCode</td><td>PostCode for delivery option on checkout page</td></tr>
+   </table>
+  <br>
+  <br>
+  
+  
+ 
+  
+  <h2 style="text-align:center;">SS_FCC_Private_Verify_AddToBagFCC_ViaFooter</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies buying FCC card from Footer link for registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>User password</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>title</td><td>Title detail for FCC registration form</td></tr>
+  <tr><td>firstName</td><td>First Name for FCC registration form</td></tr>
+   <tr><td>lastName</td><td>Last Name for FCC registration form</td></tr>
+   <tr><td>alternativeFirstName</td><td>Name on card for FCC registration form</td></tr>
+   <tr><td>DOB</td><td>DOB for FCC registration form</td></tr>
+   <tr><td>homeSTD</td><td>Home STD code for FCC registration form</td></tr>
+   <tr><td>officeSTD</td><td>Office STD code for FCC registration form</td></tr>
+   <tr><td>homeLandline</td><td>Home Landline for FCC registration form</td></tr>
+   <tr><td>officeLandline</td><td>Office LAndline for FCC registration form</td></tr>
+   <tr><td>mobileNumber</td><td>Mobile Number for FCC registration form</td></tr>
+   <tr><td>address</td><td>Address for delivery option on checkout page</td></tr>
+   <tr><td>landmark</td><td>Landmark for delivery option on checkout page</td></tr>
+   <tr><td>postCode</td><td>PostCode for delivery option on checkout page</td></tr>
+   <tr><td>paymentOption</td><td>Payment option on Payment page</td></tr>
+    <tr><td>cardNumber</td><td>Card Number on Payment page</td></tr>
+    <tr><td>CVV</td><td>CVV number on Payment page</td></tr>
+    <tr><td>cardExpiryMonthYear</td><td>Card Expiry details on Payment page</td></tr>
+    <tr><td>bank</td><td>Bank name on Payment page</td></tr>
+   </table>
+  <br>
+  <br>
+  
+  
+ 
+  
+  <h2 style="text-align:center;">SS_FCC_Private_Verify_AddToBagFCC_ViaHeader</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies buying FCC card from Header link for registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>User password</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>title</td><td>Title detail for FCC registration form</td></tr>
+  <tr><td>firstName</td><td>First Name for FCC registration form</td></tr>
+   <tr><td>lastName</td><td>Last Name for FCC registration form</td></tr>
+   <tr><td>alternativeFirstName</td><td>Name on card for FCC registration form</td></tr>
+   <tr><td>DOB</td><td>DOB for FCC registration form</td></tr>
+   <tr><td>homeSTD</td><td>Home STD code for FCC registration form</td></tr>
+   <tr><td>officeSTD</td><td>Office STD code for FCC registration form</td></tr>
+   <tr><td>homeLandline</td><td>Home Landline for FCC registration form</td></tr>
+   <tr><td>officeLandline</td><td>Office LAndline for FCC registration form</td></tr>
+   <tr><td>mobileNumber</td><td>Mobile Number for FCC registration form</td></tr>
+   <tr><td>address</td><td>Address for delivery option on checkout page</td></tr>
+   <tr><td>landmark</td><td>Landmark for delivery option on checkout page</td></tr>
+   <tr><td>postCode</td><td>PostCode for delivery option on checkout page</td></tr>
+   <tr><td>paymentOption</td><td>Payment option on Payment page</td></tr>
+    <tr><td>cardNumber</td><td>Card Number on Payment page</td></tr>
+    <tr><td>CVV</td><td>CVV number on Payment page</td></tr>
+    <tr><td>cardExpiryMonthYear</td><td>Card Expiry details on Payment page</td></tr>
+    <tr><td>bank</td><td>Bank name on Payment page</td></tr>
+   </table>
+  <br>
+  <br>
+  
+  
+ 
+  
+  <h2 style="text-align:center;">SS_FCC_Private_Verify_AddToBagFCC_ViaMyAccountsPage</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies adding FCC card to bag from My Accounts page.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>User password</td></tr> 
+  <tr><td>confirmPassword</td><td>Confirm password for registration purpose</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>title</td><td>Title detail for FCC registration form</td></tr>
+  <tr><td>firstName</td><td>First Name for FCC registration form</td></tr>
+   <tr><td>lastName</td><td>Last Name for FCC registration form</td></tr>
+   <tr><td>alternativeFirstName</td><td>Name on card for FCC registration form</td></tr>
+   <tr><td>DOB</td><td>DOB for FCC registration form</td></tr>
+   <tr><td>homeSTD</td><td>Home STD code for FCC registration form</td></tr>
+   <tr><td>officeSTD</td><td>Office STD code for FCC registration form</td></tr>
+   <tr><td>homeLandline</td><td>Home Landline for FCC registration form</td></tr>
+   <tr><td>officeLandline</td><td>Office LAndline for FCC registration form</td></tr>
+   <tr><td>mobileNumber</td><td>Mobile Number for FCC registration form</td></tr>
+   <tr><td>address</td><td>Address for delivery option on checkout page</td></tr>
+   <tr><td>landmark</td><td>Landmark for delivery option on checkout page</td></tr>
+   <tr><td>postCode</td><td>PostCode for delivery option on checkout page</td></tr>
+   </table>
+  <br>
+  <br>
+  
+  
+ 
+  
+  <h2 style="text-align:center;">SS_FCC_Private_Verify_QuickBuyFCC_GuestUser</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Quick buying FCC card for guest user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>User password</td></tr> 
+  <tr><td>confirmPassword</td><td>Confirm password for registration purpose</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>title</td><td>Title detail for FCC registration form</td></tr>
+  <tr><td>firstName</td><td>First Name for FCC registration form</td></tr>
+   <tr><td>lastName</td><td>Last Name for FCC registration form</td></tr>
+   <tr><td>alternativeFirstName</td><td>Name on card for FCC registration form</td></tr>
+   <tr><td>DOB</td><td>DOB for FCC registration form</td></tr>
+   <tr><td>homeSTD</td><td>Home STD code for FCC registration form</td></tr>
+   <tr><td>officeSTD</td><td>Office STD code for FCC registration form</td></tr>
+   <tr><td>homeLandline</td><td>Home Landline for FCC registration form</td></tr>
+   <tr><td>officeLandline</td><td>Office LAndline for FCC registration form</td></tr>
+   <tr><td>mobileNumber</td><td>Mobile Number for FCC registration form</td></tr>
+   <tr><td>address</td><td>Address for delivery option on checkout page</td></tr>
+   <tr><td>landmark</td><td>Landmark for delivery option on checkout page</td></tr>
+   <tr><td>postCode</td><td>PostCode for delivery option on checkout page</td></tr>
+   <tr><td>paymentOption</td><td>Payment option on Payment page</td></tr>
+    <tr><td>cardNumber</td><td>Card Number on Payment page</td></tr>
+    <tr><td>CVV</td><td>CVV number on Payment page</td></tr>
+    <tr><td>cardExpiryMonthYear</td><td>Card Expiry details on Payment page</td></tr>
+    <tr><td>bank</td><td>Bank name on Payment page</td></tr>
+   </table>
+  <br>
+  <br>
+  
+  
+ 
+
+  
+  <h2 style="text-align:center;">SS_FCC_Private_Verify_QuickBuyFCC_ViaFooter</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Quick buying FCC card from Footer link for registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>User password</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>title</td><td>Title detail for FCC registration form</td></tr>
+  <tr><td>firstName</td><td>First Name for FCC registration form</td></tr>
+   <tr><td>lastName</td><td>Last Name for FCC registration form</td></tr>
+   <tr><td>alternativeFirstName</td><td>Name on card for FCC registration form</td></tr>
+   <tr><td>DOB</td><td>DOB for FCC registration form</td></tr>
+   <tr><td>homeSTD</td><td>Home STD code for FCC registration form</td></tr>
+   <tr><td>officeSTD</td><td>Office STD code for FCC registration form</td></tr>
+   <tr><td>homeLandline</td><td>Home Landline for FCC registration form</td></tr>
+   <tr><td>officeLandline</td><td>Office LAndline for FCC registration form</td></tr>
+   <tr><td>mobileNumber</td><td>Mobile Number for FCC registration form</td></tr>
+   <tr><td>address</td><td>Address for delivery option on checkout page</td></tr>
+   <tr><td>landmark</td><td>Landmark for delivery option on checkout page</td></tr>
+   <tr><td>postCode</td><td>PostCode for delivery option on checkout page</td></tr>
+   <tr><td>paymentOption</td><td>Payment option on Payment page</td></tr>
+    <tr><td>cardNumber</td><td>Card Number on Payment page</td></tr>
+    <tr><td>CVV</td><td>CVV number on Payment page</td></tr>
+    <tr><td>cardExpiryMonthYear</td><td>Card Expiry details on Payment page</td></tr>
+    <tr><td>bank</td><td>Bank name on Payment page</td></tr>
+   </table>
+  <br>
+  <br>
+  
+  
+ 
+
+  
+  <h2 style="text-align:center;">SS_FCC_Private_Verify_QuickBuyFCC_ViaHeader</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Quick buying FCC card from Header link for registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>User password</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>title</td><td>Title detail for FCC registration form</td></tr>
+  <tr><td>firstName</td><td>First Name for FCC registration form</td></tr>
+   <tr><td>lastName</td><td>Last Name for FCC registration form</td></tr>
+   <tr><td>alternativeFirstName</td><td>Name on card for FCC registration form</td></tr>
+   <tr><td>DOB</td><td>DOB for FCC registration form</td></tr>
+   <tr><td>homeSTD</td><td>Home STD code for FCC registration form</td></tr>
+   <tr><td>officeSTD</td><td>Office STD code for FCC registration form</td></tr>
+   <tr><td>homeLandline</td><td>Home Landline for FCC registration form</td></tr>
+   <tr><td>officeLandline</td><td>Office LAndline for FCC registration form</td></tr>
+   <tr><td>mobileNumber</td><td>Mobile Number for FCC registration form</td></tr>
+   <tr><td>address</td><td>Address for delivery option on checkout page</td></tr>
+   <tr><td>landmark</td><td>Landmark for delivery option on checkout page</td></tr>
+   <tr><td>postCode</td><td>PostCode for delivery option on checkout page</td></tr>
+   <tr><td>paymentOption</td><td>Payment option on Payment page</td></tr>
+    <tr><td>cardNumber</td><td>Card Number on Payment page</td></tr>
+    <tr><td>CVV</td><td>CVV number on Payment page</td></tr>
+    <tr><td>cardExpiryMonthYear</td><td>Card Expiry details on Payment page</td></tr>
+    <tr><td>bank</td><td>Bank name on Payment page</td></tr>
+   </table>
+  <br>
+  <br>
+  
+  
+ 
+  
+  <h2 style="text-align:center;">SS_FCC_Private_Verify_QuickBuyFCC_ViaMyAccountsPage</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Quick buying FCC card from My Accounts Page link for registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>User password</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>title</td><td>Title detail for FCC registration form</td></tr>
+  <tr><td>firstName</td><td>First Name for FCC registration form</td></tr>
+   <tr><td>lastName</td><td>Last Name for FCC registration form</td></tr>
+   <tr><td>alternativeFirstName</td><td>Name on card for FCC registration form</td></tr>
+   <tr><td>DOB</td><td>DOB for FCC registration form</td></tr>
+   <tr><td>homeSTD</td><td>Home STD code for FCC registration form</td></tr>
+   <tr><td>officeSTD</td><td>Office STD code for FCC registration form</td></tr>
+   <tr><td>homeLandline</td><td>Home Landline for FCC registration form</td></tr>
+   <tr><td>officeLandline</td><td>Office LAndline for FCC registration form</td></tr>
+   <tr><td>mobileNumber</td><td>Mobile Number for FCC registration form</td></tr>
+   <tr><td>address</td><td>Address for delivery option on checkout page</td></tr>
+   <tr><td>landmark</td><td>Landmark for delivery option on checkout page</td></tr>
+   <tr><td>postCode</td><td>PostCode for delivery option on checkout page</td></tr>
+   <tr><td>paymentOption</td><td>Payment option on Payment page</td></tr>
+    <tr><td>cardNumber</td><td>Card Number on Payment page</td></tr>
+    <tr><td>CVV</td><td>CVV number on Payment page</td></tr>
+    <tr><td>cardExpiryMonthYear</td><td>Card Expiry details on Payment page</td></tr>
+    <tr><td>bank</td><td>Bank name on Payment page</td></tr>
+   </table>
+  <br>
+  <br>
+
+
+  
+  <h2 style="text-align:center;">SS_FCC_Private_Verify_EarnPoint_UnlinkedCard</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case checks for the earn point message displayed on cart page when FCC card no (not linked to the account)is entered.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>User password</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>giftCardEGVFCC</td><td>Enter the required payment option on checkout page(Like EGV, GC, FCC)</td></tr>
+  <tr><td>cardNumberEGVGiftFCC</td><td>FCC card number to be entered.</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  
+ 
+ 
+  
+  <h2 style="text-align:center;">SS_FCC_Private_Verify_EarnPoint_LinkedCard</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies redeeming FCC points on Checkout page for registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>User password</td></tr> 
+  <tr><td>productCategory</td><td>Product category available on main menu</td></tr>
+  <tr><td>productSubCategory</td><td>Product sub category available under the main menu</td></tr>
+  <tr><td>firstName</td><td>First Name for FCC registration form</td></tr>
+   <tr><td>lastName</td><td>Last Name for FCC registration form</td></tr>
+   <tr><td>mobileNumber</td><td>Mobile Number for FCC registration form</td></tr>
+   <tr><td>address</td><td>Address for delivery option on checkout page</td></tr>
+   <tr><td>landmark</td><td>Landmark for delivery option on checkout page</td></tr>
+   <tr><td>postCode</td><td>PostCode for delivery option on checkout page</td></tr>
+  <tr><td>giftCardEGVFCC</td><td>Enter the required payment option on checkout page(Like EGV, GC, FCC)</td></tr>
+  <tr><td>cardNumberEGVGiftFCC</td><td>FCC card number to be entered.</td></tr>
+  <tr><td>pinEGVGiftFCC</td><td>FCC password.</td></tr>
+  <tr><td>amountRedeem</td><td>Amount to be redeemed from FCC.</td></tr>
+   </table>
+  <br>
+  <br>
+  
+  
+ 
+  
+  <h2 style="text-align:center;">SS_FCC_Private_Verify_Update_FCCProfile</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies updating FCC card details from My Accounts page for registered user.</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>User email Id</td></tr>
+  <tr><td>password</td><td>User password</td></tr> 
+  <tr><td>title</td><td>Title detail for FCC registration form</td></tr>
+  <tr><td>firstName</td><td>First Name for FCC registration form</td></tr>
+   <tr><td>lastName</td><td>Last Name for FCC registration form</td></tr>
+   <tr><td>alternativeFirstName</td><td>Name on card for FCC registration form</td></tr>
+   <tr><td>DOB</td><td>DOB for FCC registration form</td></tr>
+   <tr><td>homeSTD</td><td>Home STD code for FCC registration form</td></tr>
+   <tr><td>officeSTD</td><td>Office STD code for FCC registration form</td></tr>
+   <tr><td>homeLandline</td><td>Home Landline for FCC registration form</td></tr>
+   <tr><td>officeLandline</td><td>Office LAndline for FCC registration form</td></tr>
+   <tr><td>mobileNumber</td><td>Mobile Number for FCC registration form</td></tr>
+   <tr><td>address</td><td>Address for delivery option on checkout page</td></tr>
+   <tr><td>landmark</td><td>Landmark for delivery option on checkout page</td></tr>
+   <tr><td>postCode</td><td>PostCode for delivery option on checkout page</td></tr>
+   <tr><td>invalidEmailID</td><td>Email id of the FCC profile</td></tr>
+   </table>
+  <br>
+  <br>
+  
+  
+ 
+</div>
+
+<div id="link7content" >
+
+  <h2 style="text-align:center;">SS_Login</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies login functionality</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>loggedInUserName</td><td>Logged in Username</td></tr> 
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_Invalid_Login</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies invalid login functionality</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>message1</td><td>Error message description</td></tr>
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_Login_BlankUsername</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies error message for Blank username</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>message1</td><td>Error message description</td></tr>
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_Login_BlankPassword</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies error message for Blank password</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>message1</td><td>Error message description</td></tr>
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_Logout</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies logout functionality</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_Logout_BackButton</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies user should not be taken to logged in user account after logout</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_Registration</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Registration of the new user</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>firstName</td><td>First Name of the new user</td></tr> 
+  <tr><td>lastName</td><td>Last Name of the new user</td></tr>
+  <tr><td>emailId</td><td>Email id of the new user</td></tr>
+  <tr><td>password</td><td>Password for the new user</td></tr> 
+  <tr><td>confirmPassword</td><td>Confirm password</td></tr> 
+  <tr><td>mobileNumber</td><td>Mobile number</td></tr> 
+  <tr><td>gender</td><td>Gender of the new user</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+ 
+  <h2 style="text-align:center;">SS_Registration_InvalidInput</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies invalid inputs on Registration form</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>firstName</td><td>First Name of the new user</td></tr> 
+  <tr><td>lastName</td><td>Last Name of the new user</td></tr>
+  <tr><td>emailId</td><td>Email id of the new user</td></tr>
+  <tr><td>password</td><td>Password for the new user</td></tr> 
+  <tr><td>confirmPassword</td><td>Confirm password</td></tr> 
+  <tr><td>mobileNumber</td><td>Mobile number</td></tr> 
+  <tr><td>gender</td><td>Gender of the new user</td></tr>
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_Forgot_Password_CorrectFormNavigation</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies various fields present on Forgot password form</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:20px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr></table>
+  <br>
+  <br>
+
+
+  <h2 style="text-align:center;">SS_Forgot_Password_Verify_Fields</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies various fields present on Forgot password form</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:20px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr></table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_Forgot_Password</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies forgot password functionality</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the user</td></tr>
+  </table>
+  <br>
+  <br>
+	   
+</div>
+
+<div id="link8content" >
+
+
+  <h2 style="text-align:center;">SS_MyAccount_Verify_Account_Details</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies account details page for Logged in user</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  <h2 style="text-align:center;">SS_MyAccount_Verify_All_Menu</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies all options/menu items present on My Shoppers stop page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  <h2 style="text-align:center;">SS_MyAccount_Verify_Wishlist</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies wishlist can be accessed through My Account</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr>
+  </table>
+  <br>
+  <br>
+
+  
+  <h2 style="text-align:center;">SS_MyAccount_Clicking_Item_From_Wishlist</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies product details page is opened on clicking item from wishlist</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+  
+ <h2 style="text-align:center;">SS_MyAccount_AddToCart_From_Wishlist</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies adding product to the cart from wishlist</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_MyAccount_Remove_From_Wishlist</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies removal of products from the wishlist</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr>
+  </table>
+  <br>
+  <br>
+
+
+  <h2 style="text-align:center;">SS_MyAccount_Verify_No_Orders</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies no order text for a user who haven't placed any order</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr>
+  </table>
+  <br>
+  <br>
+  
+
+  
+  <h2 style="text-align:center;">SS_ProfilePage_PersonalInfo</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies navigation to Profile page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  </table>
+  <br>
+  <br>
+ 
+  <h2 style="text-align:center;">SS_ProfilePage_PersonalInfo_Update</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies updating details on Profile page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>updatedField</td><td>Field to be updated(e.g First Name, DOB etc.)</td></tr> 
+  <tr><td>Column name (refer below table for column name)</td><td>Updated value for that field</td></tr>
+  <tr><td>message1</td><td>Confirmation message after updation</td></tr> 
+  </table>
+  <br>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of column name used based on updated Field value</caption>
+  <tr><th>updatedField</th><th>Column name</th></tr> 
+  <tr><td>FirstName</td><td>updatedFirstName</td></tr> 
+  <tr><td>LastName</td><td>updatedLastName</td></tr> 
+  <tr><td>MobileNumber</td><td>updatedMobile</td></tr> 
+  <tr><td>HomeStore</td><td>updatedHomeStore</td></tr>
+  <tr><td>DOB</td><td>updatedYear, updatedMonth, updatedDate(at least one column should be populated)</td></tr> 
+  </table>
+  <br>
+  <br>
+ 
+   <h2 style="text-align:center;">SS_ProfilePage_Change_Password_VerifyButtons</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies various buttons present for changing password on Profile page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  </table>
+  <br>
+  <br>
+ 
+   <h2 style="text-align:center;">SS_ProfilePage_Change_Password_VerifyFields</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies various fields present for changing password on Profile page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  </table>
+  <br>
+  <br>
+ 
+   <h2 style="text-align:center;">SS_ProfilePage_Change_Password</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies changing password functionality on Profile page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>updatedPassword</td><td>New Password</td></tr> 
+  <tr><td>message1</td><td>Confirmation message for profile updation</td></tr> 
+  </table>
+  <br>
+  <br>
+ 
+  <h2 style="text-align:center;">SS_ProfilePage_AddNewAddress</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies addition of single new delivery address</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>city</td><td>City for the delivery address</td></tr>
+  <tr><td>landmark</td><td>Landmark for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+ 
+ 
+   <h2 style="text-align:center;">SS_ProfilePage_AddMultipleAddress</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies addition of multiple new delivery addresses</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>firstName</td><td>First Name for the first delivery address</td></tr> 
+  <tr><td>postCode</td><td>Postal code for the first delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the first delivery</td></tr> 
+  <tr><td>city</td><td>City for the first delivery address</td></tr>
+  <tr><td>landmark</td><td>Landmark for the first delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the first delivery address</td></tr>  
+  <tr><td>alternativeFirstName</td><td>First Name for the second delivery address</td></tr> 
+  <tr><td>alternativePostCode</td><td>Postal code for the second delivery address</td></tr> 
+  <tr><td>alternativeAddress</td><td>Address field for the second delivery</td></tr> 
+  <tr><td>alternativeCity</td><td>City for the second delivery address</td></tr>
+  <tr><td>alternativeLandmark</td><td>Landmark for the second delivery</td></tr> 
+  <tr><td>alternativeMobileNumber</td><td>Phone for the second delivery address</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+   <h2 style="text-align:center;">SS_ProfilePage_Multiple_Address_Only_SingleDefaultAddress</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies only single default address on addition of multiple delivery addresses</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>firstName</td><td>First Name for the first delivery address</td></tr> 
+  <tr><td>postCode</td><td>Postal code for the first delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the first delivery</td></tr> 
+  <tr><td>city</td><td>City for the first delivery address</td></tr>
+  <tr><td>landmark</td><td>Landmark for the first delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the first delivery address</td></tr>  
+  <tr><td>alternativeFirstName</td><td>First Name for the second delivery address</td></tr> 
+  <tr><td>alternativePostCode</td><td>Postal code for the second delivery address</td></tr> 
+  <tr><td>alternativeAddress</td><td>Address field for the second delivery</td></tr> 
+  <tr><td>alternativeCity</td><td>City for the second delivery address</td></tr>
+  <tr><td>alternativeLandmark</td><td>Landmark for the second delivery</td></tr> 
+  <tr><td>alternativeMobileNumber</td><td>Phone for the second delivery address</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+   <h2 style="text-align:center;">SS_ProfilePage_EditAddress</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies updating delivery address functionality</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>city</td><td>City for the delivery address</td></tr>
+  <tr><td>landmark</td><td>Landmark for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>updatedField</td><td>Field to be updated(e.g FirstName, Landmark etc.)</td></tr> 
+  <tr><td>Column name(refer below table for the exact column name)</td><td>Updated value for that field</td></tr>
+  </table>
+ <br>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of column name used based on updated Field value</caption>
+  <tr><th>updatedField</th><th>Column name</th></tr> 
+  <tr><td>FirstName</td><td>updatedFirstName</td></tr> 
+  <tr><td>PostCode</td><td>updatedPostCode</td></tr> 
+  <tr><td>Address</td><td>updatedAddress</td></tr> 
+  <tr><td>City</td><td>updatedCity</td></tr>
+  <tr><td>Landmark</td><td>updatedLandmark</td></tr> 
+  <tr><td>Phone</td><td>updatedMobile</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+   <h2 style="text-align:center;">SS_ProfilePage_EditAddress_ChangeDefaultAddress</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies changing default delivery address functionality</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>firstName</td><td>First Name for the first delivery address</td></tr> 
+  <tr><td>postCode</td><td>Postal code for the first delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the first delivery</td></tr> 
+  <tr><td>city</td><td>City for the first delivery address</td></tr>
+  <tr><td>landmark</td><td>Landmark for the first delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the first delivery address</td></tr>  
+  <tr><td>alternativeFirstName</td><td>First Name for the second delivery address</td></tr> 
+  <tr><td>alternativePostCode</td><td>Postal code for the second delivery address</td></tr> 
+  <tr><td>alternativeAddress</td><td>Address field for the second delivery</td></tr> 
+  <tr><td>alternativeCity</td><td>City for the second delivery address</td></tr>
+  <tr><td>alternativeLandmark</td><td>Landmark for the second delivery</td></tr> 
+  <tr><td>alternativeMobileNumber</td><td>Phone for the second delivery address</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+  <h2 style="text-align:center;">SS_ProfilePage_DeleteAddress</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies deletion of delivery address</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>city</td><td>City for the delivery address</td></tr>
+  <tr><td>landmark</td><td>Landmark for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>message1</td><td>Notification message after deletion</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  <h2 style="text-align:center;">SS_MyAccount_NewsLetterAndSubscription</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies newsletter and subscription functionality on My Shoppers stop page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr>
+  <tr><td>productCategory</td><td>Newsletter services (e.g Men, Women etc.)</td></tr>
+  <tr><td>productSubCategory</td><td>Newsletter frequency(e.g Daily, Weekly etc.)</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  <h2 style="text-align:center;">SS_MyAccount_RecentOrder</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies product details page is opened on clicking item from wishlist</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  <h2 style="text-align:center;">SS_Order_OrderHistory</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies order history is present on Orders page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr>
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_Order_OrderDetailsPage</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies order details are visible on clicking View details button from Order Page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr>
+  </table>
+  <br>
+  <br>
+
+
+</div>
+
+<div id="link9content" >
+
+
+  <h2 style="text-align:center;">SS_PDP_BreadCrumb</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies visibility of breadcrumb on PDP</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+  
+  <h2 style="text-align:center;">SS_PDP_VerifyDetails</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies product details on PDP</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+
+
+  <h2 style="text-align:center;">SS_PDP_ZoomIn</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies zoom in pop up on PDP</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_PDP_ZoomIn_AddToCart</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies addition of product in the cart through Zoom in window</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_PDP_CheckDelivery_COD</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies COD check functionality</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>postCode</td><td>Valid Pin code</td></tr>
+  </table>
+  <br>
+  <br>
+  
+  <h2 style="text-align:center;">SS_PDP_CheckDelivery_COD_ChangePin_InvalidDeliveryAdd</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies change pin functionality with Invalid pin</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>postCode</td><td>Valid Pin code</td></tr>
+  <tr><td>alternativePostCode</td><td>Invalid Pin code</td></tr> 
+  </table>
+  <br>
+  <br>
+
+
+  <h2 style="text-align:center;">SS_PDP_PersistentProduct</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies persistent product bar</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+  
+  <h2 style="text-align:center;">SS_PDP_WriteReview_AutoScrollToBottom</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies auto scrolling functionality on PDP on click of Write a Review</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+  
+  <h2 style="text-align:center;">SS_PDP_AddToCart</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies addition of product in the cartthrough PDP</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excelfile</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr>
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_PDP_RemoveFromMiniCart</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies removing of product from the mini cart</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_PDP_Verify_AddToWishList_Guest</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Add to Wishlist button presence for Guest user</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_PDP_Verify_AddToWishList_RegisteredUser</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies Add to Wishlist functionality for registered user</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+
+  <h2 style="text-align:center;">SS_PDP_Verify_SocialShareOption</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies social share option present on PDP</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+  
+  <h2 style="text-align:center;">SS_PDP_WriteAReview</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies review writing functionality on PDP</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>reviewTitle</td><td>Title of the review</td></tr>
+  <tr><td>description</td><td>Description of the review</td></tr> 
+  <tr><td>message1</td><td>Confirmation message of successful submission of review</td></tr> 
+  </table>
+  <br>
+  <br>
+
+</div>
+
+<div id="link10content" >
+
+  <h2 style="text-align:center;">SS_CheckOut</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies navigation to checkout page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  </table>
+  <br>
+  <br>
+ 
+   <h2 style="text-align:center;">SS_CheckOut_NewAddress</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies new address addition on checkout page</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Landmark for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+  <h2 style="text-align:center;">SS_CheckOut_AlreadyLoginUser_OrderUsingCC</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using Credit Card for already logged in user</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>paymentOption</td><td>CreditCard</td></tr>
+  <tr><td>cardNumber</td><td>Card number</td></tr> 
+  <tr><td>CVV</td><td>CVV number</td></tr> 
+  <tr><td>cardExpiryMonthYear</td><td>Expiry Month and year(format 02/2016)</td></tr> 
+  <tr><td>bank</td><td>Card Type</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+  <h2 style="text-align:center;">SS_CheckOut_AlreadyLoginUser_OrderUsingEGV</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using EGV for already logged in user</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>giftCardEGV</td><td>EGV</td></tr>
+  <tr><td>cardNumberEGVGift</td><td>Card number</td></tr> 
+  <tr><td>pinEGVGift</td><td>Pin number</td></tr> 
+  <tr><td>amountRedeem</td><td>Amount to be redeemed</td></tr> 
+  </table>
+  <br>
+  <br>
+ 
+  <h2 style="text-align:center;">SS_CheckOut_AlreadyLoginUser_OrderUsingNetBanking</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using Netbanking for already logged in user</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>paymentOption</td><td>NetBanking</td></tr>
+  <tr><td>netbankingBankSelection</td><td>Bank selection criteria('SelectBankFromDropdown' in case selected bank is from the drop down list, 'SelectBankFromOptionList' in case selected bank is from the visible list)</td></tr> 
+  <tr><td>bank</td><td>Bank through which payment is to be done</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+  <h2 style="text-align:center;">SS_CheckOut_GuestUser_OrderUsingDBCard</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using Debit Card for unregistered user</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the unregistered user</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>paymentOption</td><td>DebitCard</td></tr>
+  <tr><td>cardNumber</td><td>Card number</td></tr> 
+  <tr><td>CVV</td><td>CVV number</td></tr> 
+  <tr><td>cardExpiryMonthYear</td><td>Expiry Month and year(format 02/2016)</td></tr> 
+  <tr><td>bank</td><td>Card Type</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+  <h2 style="text-align:center;">SS_CheckOut_GuestUser_OrderUsingGiftCard</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using Gift Card for unregistered user</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the unregistered user</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>giftCardEGV</td><td>GiftCard</td></tr>
+  <tr><td>cardNumberEGVGift</td><td>Card number</td></tr> 
+  <tr><td>pinEGVGift</td><td>Pin number</td></tr> 
+  <tr><td>amountRedeem</td><td>Amount to be redeemed</td></tr> 
+  </table>
+  <br>
+  <br>
+
+ 
+  <h2 style="text-align:center;">SS_CheckOut_GuestUser_OrderUsingNetBanking</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using Netbanking for unregistered user</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>paymentOption</td><td>NetBanking</td></tr>
+  <tr><td>netbankingBankSelection</td><td>Bank selection criteria('SelectBankFromDropdown' in case selected bank is from the drop down list, 'SelectBankFromOptionList' in case selected bank is from the visible list)</td></tr> 
+  <tr><td>bank</td><td>Bank through which payment is to be done</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+   <h2 style="text-align:center;">SS_CheckOut_LoginAtCheckout_OrderUsingDBCard</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using Debit Card by login at checkout</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>paymentOption</td><td>DebitCard</td></tr>
+  <tr><td>cardNumber</td><td>Card number</td></tr> 
+  <tr><td>CVV</td><td>CVV number</td></tr> 
+  <tr><td>cardExpiryMonthYear</td><td>Expiry Month and year(format 02/2016)</td></tr> 
+  <tr><td>bank</td><td>Card Type</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+  <h2 style="text-align:center;">SS_CheckOut_LoginAtCheckout_OrderUsingGiftCard</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using GiftCard by login at checkout</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>giftCardEGV</td><td>EGV</td></tr>
+  <tr><td>cardNumberEGVGift</td><td>Card number</td></tr> 
+  <tr><td>pinEGVGift</td><td>Pin number</td></tr> 
+  <tr><td>amountRedeem</td><td>Amount to be redeemed</td></tr> 
+  </table>
+  <br>
+  <br>
+ 
+   <h2 style="text-align:center;">SS_CheckOut_LoginAtCheckout_OrderUsingNetBanking</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using Netbanking by Login at checkout</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the registered user</td></tr>
+  <tr><td>password</td><td>Password for the registered user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>paymentOption</td><td>NetBanking</td></tr>
+  <tr><td>netbankingBankSelection</td><td>Bank selection criteria('SelectBankFromDropdown' in case selected bank is from the drop down list, 'SelectBankFromOptionList' in case selected bank is from the visible list)</td></tr> 
+  <tr><td>bank</td><td>Bank through which payment is to be done</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+ 
+  <h2 style="text-align:center;">SS_CheckOut_RegisterAtCheckout_OrderUsingCC</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using Credit Card with user registration at checkout</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the new user</td></tr>
+  <tr><td>password</td><td>Password for the new user</td></tr>
+  <tr><td>alternativeFirstName</td><td>First Name of the new user</td></tr> 
+  <tr><td>alternativeLastName</td><td>Last Name of the new user</td></tr>
+  <tr><td>confirmPassword</td><td>Confirm password</td></tr> 
+  <tr><td>alternativeMobile</td><td>Mobile number</td></tr> 
+  <tr><td>gender</td><td>Gender of the new user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>paymentOption</td><td>CreditCard</td></tr>
+  <tr><td>cardNumber</td><td>Card number</td></tr> 
+  <tr><td>CVV</td><td>CVV number</td></tr> 
+  <tr><td>cardExpiryMonthYear</td><td>Expiry Month and year(format 02/2016)</td></tr> 
+  <tr><td>bank</td><td>Card Type</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+   <h2 style="text-align:center;">SS_CheckOut_RegisterAtCheckout_OrderUsingGiftCard</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using GiftCard with user registration at checkout</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the new user</td></tr>
+  <tr><td>password</td><td>Password for the new user</td></tr>
+  <tr><td>alternativeFirstName</td><td>First Name of the new user</td></tr> 
+  <tr><td>alternativeLastName</td><td>Last Name of the new user</td></tr>
+  <tr><td>confirmPassword</td><td>Confirm password</td></tr> 
+  <tr><td>alternativeMobile</td><td>Mobile number</td></tr> 
+  <tr><td>gender</td><td>Gender of the new user</td></tr>  
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>giftCardEGV</td><td>GiftCard</td></tr>
+  <tr><td>cardNumberEGVGift</td><td>Card number</td></tr> 
+  <tr><td>pinEGVGift</td><td>Pin number</td></tr> 
+  <tr><td>amountRedeem</td><td>Amount to be redeemed</td></tr> 
+  </table>
+  <br>
+  <br>
+ 
+   <h2 style="text-align:center;">SS_CheckOut_RegisterAtCheckout_OrderUsingNetBanking</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies checkout flow using Netbanking with user registration at checkout</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the new user</td></tr>
+  <tr><td>password</td><td>Password for the new user</td></tr>
+  <tr><td>alternativeFirstName</td><td>First Name of the new user</td></tr> 
+  <tr><td>alternativeLastName</td><td>Last Name of the new user</td></tr>
+  <tr><td>confirmPassword</td><td>Confirm password</td></tr> 
+  <tr><td>alternativeMobile</td><td>Mobile number</td></tr> 
+  <tr><td>gender</td><td>Gender of the new user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  <tr><td>paymentOption</td><td>NetBanking</td></tr>
+  <tr><td>netbankingBankSelection</td><td>Bank selection criteria('SelectBankFromDropdown' in case selected bank is from the drop down list, 'SelectBankFromOptionList' in case selected bank is from the visible list)</td></tr> 
+  <tr><td>bank</td><td>Bank through which payment is to be done</td></tr>
+  </table>
+  <br>
+  <br>
+ 
+ 
+  <h2 style="text-align:center;">SS_CheckOut_RegisterAtCheckout_VerifyDefaultAddressAddition</h2>
+  <p style="font-size:19px"><b>Description -</b>This Test Case verifies if the customer has created the account from the checkout flow, then the delivery address entered during the checkout flow is added to the Address book as default address</p>
+  <TABLE width="100%" border="1">
+  <caption style="font-size:17px">List of columns used from excel file</caption>
+  <tr><th>Parameters</th><th>Description</th></tr>
+  <tr><td>browser</td><td>Browser name in which test execution starts</td></tr>
+  <tr><td>emailId</td><td>Email id of the new user</td></tr>
+  <tr><td>password</td><td>Password for the new user</td></tr>
+  <tr><td>alternativeFirstName</td><td>First Name of the new user</td></tr> 
+  <tr><td>alternativeLastName</td><td>Last Name of the new user</td></tr>
+  <tr><td>confirmPassword</td><td>Confirm password</td></tr> 
+  <tr><td>alternativeMobile</td><td>Mobile number</td></tr> 
+  <tr><td>gender</td><td>Gender of the new user</td></tr> 
+  <tr><td>productCategory</td><td>Product Main Category(e.g. MEN, WOMEN etc)</td></tr>
+  <tr><td>productSubCategory</td><td>Product Sub Category(e.g. T-shirt, Watches etc)</td></tr> 
+  <tr><td>firstName</td><td>First Name for the delivery address</td></tr> 
+  <tr><td>lastName</td><td>Last Name for the delivery address</td></tr>
+  <tr><td>postCode</td><td>Postal code for the delivery address</td></tr> 
+  <tr><td>address</td><td>Address field for the delivery</td></tr> 
+  <tr><td>landmark</td><td>Address2 field for the delivery</td></tr> 
+  <tr><td>mobileNumber</td><td>Phone for the delivery address</td></tr>
+  </table>
+  <br>
+  <br>
+
+</div>
+
+
+  </div>
+
+</BODY>
+</HTML>
