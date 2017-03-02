@@ -100,7 +100,7 @@ public class SS_CheckOut_LoginAtCheckout_OrderUsingDBCard {
 			Log.info("Login successful at Checkout");
 			CheckOut_Action.ProceedwithNewAddress(iTestCaseRow);
 			
-			//CheckOut_Action.PaymentOption(iTestCaseRow);
+			CheckOut_Action.PaymentOption(iTestCaseRow);
 			ExcelUtils.setCellData("Pass", iTestCaseRow, Constant.result);
 			Utils.captureScreenshot(sTestCaseName, "Pass", "Passed");
 			Log.info("Payment successful using DB Card after login at checkout");

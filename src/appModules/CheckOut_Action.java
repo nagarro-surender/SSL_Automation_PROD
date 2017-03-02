@@ -95,7 +95,33 @@ public class CheckOut_Action {
 			throw e;
 		}
 	}
+	public static void ProceedwithNewAddressEmptyfield(int iTestCaseRow) throws Exception {
 
+	      System.out.println(Checkout_Page.DeliveryAddress.firstName().getAttribute("Value"));
+		
+			
+			try {
+
+				if ((Checkout_Page.DeliveryAddress.firstName().getAttribute("Value").startsWith("A"))) {
+					BaseClass.errorValidation += "first Name field is not empty \n";
+				}
+
+		         if ((Checkout_Page.DeliveryAddress.lastName().getAttribute("Value").startsWith("G"))) {
+						BaseClass.errorValidation += "last Name field is not empty \n";
+					}
+
+				} catch (Exception e1) {
+					Log.error(e1.getMessage());
+					throw e1;
+					
+				}
+			
+			//Checkout_Page.DeliveryAddress.TermsandConditionsCheckBox().sendKeys(Keys.PAGE_DOWN);
+			//Thread.sleep(1000);
+			//Checkout_Page.DeliveryAddress.TermsandConditionsCheckBox().click();
+			//Log.info("Terms and conditions option is selected successfully")
+
+	}
 	public static void ProceedwithNewAddressNoFName(int iTestCaseRow) throws Exception {
 
 		try {
@@ -1073,6 +1099,22 @@ public class CheckOut_Action {
 
 			}
 
+			if (paymentMode.equals("Wallets")) {
+
+				Checkout_Page.Paymentinfo.WalletsOption().click();
+				Log.info("Wallets option is clicked successfully");
+			    String WalletName = ExcelUtils.getCellData(iTestCaseRow, Constant.bank);
+			    //Utils.verifyElement(Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName));
+			    //Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).sendKeys(Keys.ENTER);
+				Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).click();
+				Log.info("Wallet selected from the options displayed");
+				Log.info("Wallet selected successfully");
+				Checkout_Page.Paymentinfo.Wallet_PlaceOrderBtn().click();
+		
+				}
+
+				
+				
 			if (paymentMode.equals("DebitCard")) {
 
 				Checkout_Page.Paymentinfo.DebitCardOption().click();
@@ -1101,6 +1143,7 @@ public class CheckOut_Action {
 			}
 
 			if (paymentMode.equals("NetBanking")) {
+
 
 				Checkout_Page.Paymentinfo.NetBankingOption().click();
 				Log.info("NetBanking option is clicked successfully");
@@ -1138,6 +1181,91 @@ public class CheckOut_Action {
 			throw e;
 		}
 	}
+	
+public static void PaymentOption_Wallets(int iTestCaseRow) throws Exception{
+		
+		Checkout_Page.Paymentinfo.WalletsOption().click();
+		Log.info("Wallets option is clicked successfully");
+		 
+		try{
+			  String WalletName = "bg-image-wallet freecharge";
+			   Utils.verifyElement(Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName));
+			    //Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).sendKeys(Keys.ENTER);
+				Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).click();
+				Log.info("Freechanre Wallet selected from the options displayed");
+				
+		}catch (Exception e) {
+			Log.error("Exception in Class PaymentOption_Wallets | Method PaymentOption_Wallets");
+			Log.error("Issue with FreeCharge selection process");
+			throw e;
+		}
+			
+		try{
+			  String WalletName = "bg-image-wallet jiomoney";
+			   Utils.verifyElement(Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName));
+			    //Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).sendKeys(Keys.ENTER);
+				Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).click();
+				Log.info("Freechanre Wallet selected from the options displayed");
+				
+		}catch (Exception e) {
+			Log.error("Exception in Class PaymentOption_Wallets | Method PaymentOption_Wallets");
+			Log.error("Issue with FreeCharge selection process");
+			throw e;
+		}
+		try{
+			  String WalletName = "bg-image-wallet mobikwik";
+			   Utils.verifyElement(Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName));
+			    //Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).sendKeys(Keys.ENTER);
+				Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).click();
+				Log.info("Freechanre Wallet selected from the options displayed");
+				
+		}catch (Exception e) {
+			Log.error("Exception in Class PaymentOption_Wallets | Method PaymentOption_Wallets");
+			Log.error("Issue with FreeCharge selection process");
+			throw e;
+		}
+
+		try{
+			  String WalletName = "bg-image-wallet oxigen";
+			   Utils.verifyElement(Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName));
+			    //Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).sendKeys(Keys.ENTER);
+				Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).click();
+				Log.info("Freechanre Wallet selected from the options displayed");
+				
+		}catch (Exception e) {
+			Log.error("Exception in Class PaymentOption_Wallets | Method PaymentOption_Wallets");
+			Log.error("Issue with FreeCharge selection process");
+			throw e;
+		}
+
+		try{
+			  String WalletName = "bg-image-wallet paytm";
+			   Utils.verifyElement(Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName));
+			    //Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).sendKeys(Keys.ENTER);
+				Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).click();
+				Log.info("Freechanre Wallet selected from the options displayed");
+				
+		}catch (Exception e) {
+			Log.error("Exception in Class PaymentOption_Wallets | Method PaymentOption_Wallets");
+			Log.error("Issue with FreeCharge selection process");
+			throw e;
+		}
+
+		try{
+			  String WalletName = "bg-image-wallet buddy";
+			   Utils.verifyElement(Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName));
+			    //Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).sendKeys(Keys.ENTER);
+				Checkout_Page.Paymentinfo.Wallets_SelectFromVisibleList(WalletName).click();
+				Log.info("Freechanre Wallet selected from the options displayed");
+				
+		}catch (Exception e) {
+			Log.error("Exception in Class PaymentOption_Wallets | Method PaymentOption_Wallets");
+			Log.error("Issue with FreeCharge selection process");
+			throw e;
+		}
+	
+		}
+
 
 	public static void RegisterAtCheckout(int iTestCaseRow) throws Exception {
 
@@ -1166,6 +1294,7 @@ public class CheckOut_Action {
 			String cPassword = ExcelUtils.getCellData(iTestCaseRow, Constant.confirmPassword);
 			Checkout_Page.LoginDetails.Confirm_Password().sendKeys(cPassword);
 			Log.info("Confirm Password entered successfully");
+
 
 			String pNumber = ExcelUtils.getCellData(iTestCaseRow, Constant.alternativeMobile);
 			Checkout_Page.LoginDetails.mobileNumber().sendKeys(pNumber);

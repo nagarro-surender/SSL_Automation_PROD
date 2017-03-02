@@ -97,7 +97,7 @@ public class SS_CheckOut_LoginAtCheckout_OrderUsingGiftCard {
 			Log.info("Login successful at Checkout");
 			CheckOut_Action.ProceedwithNewAddress(iTestCaseRow);
 			
-			//CheckOut_Action.RedeemGiftCard_EGV_FCC(iTestCaseRow);
+			CheckOut_Action.RedeemGiftCard_EGV_FCC(iTestCaseRow);
 			ExcelUtils.setCellData("Pass", iTestCaseRow, Constant.result);
 			Utils.captureScreenshot(sTestCaseName, "Pass", "Passed");
 			Log.info("Payment successful using Gift card after login at checkout");

@@ -342,6 +342,40 @@ public class FCC_Action {
 			throw e;
 		}
 	}
+	
+	public static void FCC_Verify_AddToBagFCC_GuestUser_ViaFooterLink(int iTestCaseRow) throws Exception {
+		
+		try {
+			Utils.verifyElement(FCC_Page.FCC_Links_Footer.FirstCitizenLink());
+			FCC_Page.FCC_Links_Footer.FirstCitizenLink().click();
+
+		} catch (Exception e) {
+			Log.error("Exception in Class FCC_Action | Method FCC_Verify_QuickBuyFCC_ViaFooterLink");
+			Log.error(e.getMessage());
+			throw e;
+		}
+		try {
+			Utils.verifyElement(FCC_Page.AddToBag());
+			FCC_Page.AddToBag().click();
+		} catch (Exception e) {
+			Log.error(e.getMessage());
+			Log.error("Exception in Class FCC_Action | Method FCC_Verify_AddToBagFCC_GuestUser_ViaHeaderLink");
+			throw e;
+		}
+		
+		try {
+			FCC_Verify_BuyFCC_GuestUserFlow(iTestCaseRow);
+			Thread.sleep(5000);
+			//Utils.verifyElement(FCC_Page.AddToBagBottomButton());
+			//Utils.mouseHover(Home_Page.headerSoppersStopLogo());
+			Utils.mouseHover(FCC_Page.AddToBagBottomButton());
+			FCC_Page.AddToBagBottomButton().sendKeys(Keys.ENTER);
+		} catch (Exception e) {
+			Log.error(e.getMessage());
+			Log.error("Exception in Class FCC_Action | Method FCC_Verify_AddToBagFCC_GuestUser_ViaHeaderLink_on click button");
+			throw e;
+		}
+	}
 	public static void FCC_Verify_QuickBuyFCC_ViaHeaderLink(int iTestCaseRow) throws Exception {
 
 		try {
@@ -395,6 +429,8 @@ public class FCC_Action {
 		}
 
 	}
+	
+		
 
 	public static void FCC_Verify_QuickBuyFCC_ViaMyAccountPage(int iTestCaseRow) throws Exception {
 
@@ -438,6 +474,18 @@ public class FCC_Action {
 	}
 
 	public static void FCC_Verify_QuickBuyFCC_GuestUser_ViaHeaderLink(int iTestCaseRow) throws Exception {
+		
+		try {
+			Utils.verifyElement(FCC_Page.FCC_Links_Footer.FirstCitizenLink());
+			FCC_Page.FCC_Links_Footer.FirstCitizenLink().click();
+
+		} catch (Exception e) {
+			Log.error("Exception in Class FCC_Action | Method FCC_Verify_QuickBuyFCC_ViaFooterLink");
+			Log.error(e.getMessage());
+			throw e;
+		}
+		
+		
 		try {
 			Utils.verifyElement(FCC_Page.QuickBuyGuestUser());
 			FCC_Page.QuickBuyGuestUser().click();

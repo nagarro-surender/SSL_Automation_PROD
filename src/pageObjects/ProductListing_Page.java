@@ -340,10 +340,9 @@ public static List<WebElement> DefaultAttributeFilterCategoryContainer()throws E
 
 		try {
 			Log.info("Locating Price related Primary Filter on PLP ");
+			element = Driver.findElement(By.xpath("//div[@class='lists-names price-range js-facet-form']/preceding-sibling::div[contains(@class,'filter-category-heading')]"));
 			//element = Driver.findElement(By
-					//.xpath("//div[@class='lists-names price-range js-facet-form']/preceding-sibling::div[contains(@class,'filter-category-heading')]"));
-			element = Driver.findElement(By
-					.xpath("//*[@id='tab13']/div[1]"));
+					//.xpath("//*[@id='tab13']/div[1]"));
 			Log.info("Price related Primary Filter is present on PLP ");
 
 		} catch (Exception e) {
@@ -446,7 +445,7 @@ public static List<WebElement> DefaultAttributeFilterCategoryContainer()throws E
 		try {
 			Log.info("Locating On Sale related Primary Filter on PLP ");
 			element = Driver.findElement(By
-					.xpath("//div[@class='filter-scroll l3-category js-facet-form']/preceding-sibling::div[contains(@class,'filter-category-heading')]"));
+					.xpath("//div[@class='filter-scroll promo-list js-facet-form']/preceding-sibling::div[contains(@class,'filter-category-heading')]"));
 			Log.info("On Sale related Primary Filter is present on PLP ");
 
 		} catch (Exception e) {
@@ -462,8 +461,8 @@ public static List<WebElement> DefaultAttributeFilterCategoryContainer()throws E
 
 		try {
 			Log.info("Locating On Sale related Primary Filter Container on PLP ");
-			element = Driver.findElement(By
-					.xpath("//*[@class='filter-scroll l3-category js-facet-form']"));
+			//element = Driver.findElement(By.xpath("//*[@class='filter-scroll l3-category js-facet-form']"));
+			element = Driver.findElement(By.xpath("//*[@class='filter-scroll promo-list js-facet-form']"));
 			//element = Driver.findElement(By
 			//	.xpath("//div[@class='viewport']"));
 			

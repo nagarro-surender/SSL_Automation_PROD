@@ -636,24 +636,31 @@ public class HomePage_Action {
 
 			
 			Home_Page.Footer_Section.Help_FAQ().click();
+			Thread.sleep(5000);
 			Utils.PageHeaderCheck("FAQ | Shoppers Stop");
 
 			Home_Page.Footer_Section.Track_Order().click();
+			Thread.sleep(5000);
 			Utils.PageHeaderCheck("Shoppers Stop");
 
 			Home_Page.Footer_Section.Size_Guide().click();
+			Thread.sleep(5000);
 			Utils.PageHeaderCheck("Size Guide | Shoppers Stop");
 
 			Home_Page.Footer_Section.Buying_Guide().click();
+			Thread.sleep(5000);
 			Utils.PageHeaderCheck("BuyingGuide | Shoppers Stop");
 
 			Home_Page.Footer_Section.How_To_Buy().click();
+			Thread.sleep(5000);
 			Utils.PageHeaderCheck("Purchase | Shoppers Stop");
 
 			Home_Page.Footer_Section.How_To_Pay().click();
+			Thread.sleep(5000);
 			Utils.PageHeaderCheck("How do I pay Template | Shoppers Stop");
 
 			Home_Page.Footer_Section.Place_We_Deliever().click();
+			Thread.sleep(5000);
 			Utils.PageHeaderCheck("Shoppers Stop");
 
 			

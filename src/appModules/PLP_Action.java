@@ -178,7 +178,7 @@ public class PLP_Action {
 	public static void PLP_Verify_Brand_FilterDropDown(int iTestCaseRow) throws Exception {
 		boolean check;
 		try {
-			Utils.scrollingToPageElementAdvanced(ProductListing_Page.PrimaryFilterPriceDropDown());
+			//Utils.scrollingToPageElementAdvanced(ProductListing_Page.PrimaryFilterPriceDropDown());
 			//Utils.scrollingToPageElementByCordinate(140, 700);
 			check = Utils.CheckEnability(ProductListing_Page.PrimaryFilterBrandDropDownContainer());
 			if (!check) {
@@ -246,10 +246,13 @@ public class PLP_Action {
 			//rob1
 			//.keyPress(KeyEvent.VK_ENTER);
 			//Utils.waitForLoad(ExcelUtils.getCellData(iTestCaseRow, Constant.browser));
-			//check = Utils.CheckEnability(ProductListing_Page.PrimaryFilterPriceDropDownContainer());
-			//if (!check) {
-			//	BaseClass.errorValidation += "Primary Filter Container for Price is not present on PLP while it should be present  \n";
-			//}
+			ProductListing_Page.PrimaryFilterPriceDropDown().click();
+			Log.info("Primary filter Size drop down clicked on PLP page");
+			Utils.waitForLoad(ExcelUtils.getCellData(iTestCaseRow, Constant.browser));
+			check = Utils.CheckEnability(ProductListing_Page.PrimaryFilterPriceDropDownContainer());
+			if (!check) {
+				BaseClass.errorValidation += "Primary Filter Container for Price is not present on PLP while it should be present  \n";
+			}
 			Log.info("Verification for Primary Filter Price Drop Down Functionality completed on PLP page");
 
 		} catch (Exception e) {
@@ -344,7 +347,7 @@ public class PLP_Action {
 		boolean check;
 		try {
 
-			//Utils.scrollingToPageElementAdvanced(ProductListing_Page.PrimaryFilterOnSaleDropDown());
+			Utils.scrollingToPageElementAdvanced(ProductListing_Page.PrimaryFilterPriceDropDownContainer());
 			//Utils.scrollingToPageElementByCordinate(144, 1100);
 			Log.info("Scrolled to On Sale filter drop down on PLP page");
 			check = Utils.CheckEnability(ProductListing_Page.PrimaryFilterOnSaleDropDownContainer());
@@ -383,11 +386,14 @@ public class PLP_Action {
 
 		Log.info("Verification for Primary Filter Drop Down Functionality on PLP page");
 		try {
-			PLP_Verify_OnSale_FilterDropDown(iTestCaseRow);
+			PLP_Verify_Brand_FilterDropDown(iTestCaseRow);
 			PLP_Verify_Size_FilterDropDown(iTestCaseRow);
 			PLP_Verify_Color_FilterDropDown(iTestCaseRow);
 			PLP_Verify_Price_FilterDropDown(iTestCaseRow);
-			PLP_Verify_Brand_FilterDropDown(iTestCaseRow);
+			PLP_Verify_OnSale_FilterDropDown(iTestCaseRow);
+			
+			
+			
 			
 			
 		} catch (Exception e) {

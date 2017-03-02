@@ -102,10 +102,10 @@ public class SS_CheckOut_AlreadyLoginUser_OrderUsingEGV {
 			Log.info("Payment information tab is visible");
 			
 			
-			//CheckOut_Action.RedeemGiftCard_EGV_FCC(iTestCaseRow);
-			//Log.info("Payment successful using EGV");
+			CheckOut_Action.RedeemGiftCard_EGV_FCC(iTestCaseRow);
+			Log.info("Payment successful using EGV");
 			
-			//CheckOut_Action.PaymentOption(iTestCaseRow);
+			CheckOut_Action.PaymentOption(iTestCaseRow);
 			Utils.captureScreenshot(sTestCaseName, "Pass", "Passed");
 			ExcelUtils.setCellData("Pass", iTestCaseRow, Constant.result);
 

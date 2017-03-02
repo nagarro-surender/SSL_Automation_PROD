@@ -395,7 +395,24 @@ public class Cart_Page extends BaseClass {
 		return elements;
 
 	}
+	public static List<WebElement> UpdateProductSize() throws Exception {
 
+		try {
+			Log.info("Locating Update ProductSize Field elements on the cart page");
+			elements = Driver.findElements(By.xpath(
+					"//section[@class='shopping-bag-wpr']/descendant::form[contains(@id,'updateCartForm')]/ul/li[2]//*[contains(@id,'sizeProductCode')]"));
+
+			Log.info("Update Quantity Field exist on the cart page");
+
+		} catch (Exception e) {
+			Log.error("Exception in Class Cart_Page | Method UpdateQuantity");
+			Log.error("Update Quantity Field does not exist on the cart page");
+			throw e;
+		}
+
+		return elements;
+
+	}
 	public static List<WebElement> IncreaseQuantity() throws Exception {
 
 		try {

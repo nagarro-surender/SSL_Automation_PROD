@@ -55,7 +55,7 @@ public class Cart_Action {
 			//ShippingCost = Integer.parseInt(Cart_Page.ShippingCostText().getText());
 			//Cart_Page.ShippingCostText().getText();
 			System.out.println(Cart_Page.ShippingCostText().getText());
-			if (!(Cart_Page.ShippingCostText().getText().equals("Rs 1"))) {
+			if (!(Cart_Page.ShippingCostText().getText().startsWith("Rs"))) {
 				BaseClass.errorValidation += "ShippingCost not inculded for item\n";
 			}
 			Log.info("Verification for ShippingCost successful done");
@@ -82,7 +82,7 @@ public class Cart_Action {
 		}
 	}
 
-	public static void CheckMiniCartShippingCostFinal(int iTestCaseRow) throws Exception {
+public static void CheckMiniCartShippingCostFinal(int iTestCaseRow) throws Exception {
 		
 
 		Log.info("Verification for shipping cost for item");
@@ -91,13 +91,13 @@ public class Cart_Action {
 			
 			//ShippingCost = Integer.parseInt(Cart_Page.ShippingCostText().getText());
 			//Cart_Page.ShippingCostText().getText();
-			System.out.println(Cart_Page.ShippingCostText().getText());
-			if (!(Cart_Page.ShippingCostText().getText().equals("Rs 1"))) {
+			//System.out.println(Cart_Page.ShippingCostText().getText());
+			if (!(Cart_Page.ShippingCostText().getText().startsWith("Rs"))) {
 				BaseClass.errorValidation += "ShippingCost not inculded for item\n";
 			}
 			Log.info("Verification for ShippingCost successful done");
 		} catch (Exception e) {
-			Log.error("Exception in Class Cart_Action | Method CheckMiniCartShippingCost");
+			Log.error("Exception in Class Cart_Action | Method CheckMiniCartShippingCostFinal");
 			Log.error(e.getMessage());
 			throw e;
 		}
@@ -569,6 +569,34 @@ public class Cart_Action {
 		}
 	}
 
+	public static void Verify_Public_Edit_Cart_Page_sameproduct(int iTestCaseRow) throws Exception {
+		Log.info("Verification for edit cart functionality on cart page for guest user started");
+		String productQuantity = "";
+		String productSize = "";
+		try {
+			productQuantity = Cart_Page.UpdateQuantity().get(0).getAttribute("value");
+			Thread.sleep(3000);
+			Cart_Page.EditCartLink().get(0).click();
+			Log.info("Edit cart link clicked successfully");
+			Thread.sleep(5000);
+			Utils.SelectDropdownUpdated(Cart_Page.UpdateProductSize().get(0));
+			Thread.sleep(3000);
+			Cart_Page.UpdateCartItem().get(0).sendKeys(Keys.ENTER);
+			Log.info("Update cart link clicked successfully");
+			Thread.sleep(3000);
+			if (Cart_Page.UpdateQuantity().get(0).getAttribute("value").equals(productQuantity)) {
+				BaseClass.errorValidation += "Product quantity increase functionality not working\n";
+			}
+		} catch (Exception e) {
+			Log.error("Exception in Class Cart_Action | Method Verify_Public_Edit_Cart_Page");
+			Log.error(e.getMessage());
+			throw e;
+		}
+		if (!BaseClass.errorValidation.isEmpty()) {
+			Log.error("Exception in Class Cart_Action | Method Verify_Public_Edit_Cart_Page");
+			throw new Exception(BaseClass.errorValidation);
+		}
+	}
 	public static void Verify_Private_Cart_Page_RemoveProduct(int iTestCaseRow) throws Exception {
 		Log.info("Verification for removing product from cart page started");
 		int productCountBefore;
@@ -875,7 +903,7 @@ public class Cart_Action {
 			
 			Utils.verifyElement(Home_Page.headerMiniCartIcon());
 			//Utils.mouseHover(Home_Page.headerMiniCartIcon());
-			Home_Page.headerMiniCartIcon().click();
+			//Home_Page.headerMiniCartIcon().click();
 			Thread.sleep(5000);
 			
 			totalCartPrice2=Cart_Page.TotalCartPriceMain().getText();

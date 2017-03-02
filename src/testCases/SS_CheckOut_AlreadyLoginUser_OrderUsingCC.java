@@ -100,7 +100,7 @@ public class SS_CheckOut_AlreadyLoginUser_OrderUsingCC {
 			CheckOut_Action.ProceedwithNewAddress(iTestCaseRow);
 			Utils.verifyElement(Checkout_Page.Paymentinfo.PaymentClass());
 			Log.info("Payment information tab is visible");
-			//CheckOut_Action.PaymentOption(iTestCaseRow);
+			CheckOut_Action.PaymentOption(iTestCaseRow);
 			ExcelUtils.setCellData("Pass", iTestCaseRow, Constant.result);
 			Log.info("Payment successful for already login user using CC");
 			Utils.captureScreenshot(sTestCaseName, "Pass", "Pass");

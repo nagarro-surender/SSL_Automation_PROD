@@ -103,7 +103,7 @@ public class SS_CheckOut_AlreadyLoginUser_OrderUsingNetBanking {
 			CheckOut_Action.ProceedwithNewAddress(iTestCaseRow);
 			Utils.verifyElement(Checkout_Page.Paymentinfo.PaymentClass());
 			Log.info("Payment information tab is visible");
-			//CheckOut_Action.PaymentOption(iTestCaseRow);
+			CheckOut_Action.PaymentOption(iTestCaseRow);
 			ExcelUtils.setCellData("Pass", iTestCaseRow, Constant.result);
 			Utils.captureScreenshot(sTestCaseName, "Pass", "Passed");
 			Log.info("Payment successfull using Netbanking");

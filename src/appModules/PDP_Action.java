@@ -232,6 +232,27 @@ public class PDP_Action {
 
 	}
 	
+	public static void product_selectDifferentSize(List<WebElement> productSizeButtonList)
+			throws Exception {
+		
+		try {
+			if (productSizeButtonList.size()>0){
+				for (int i=0; i<=productSizeButtonList.size()-1;i++){
+					
+					if (!(productSizeButtonList.get(i).getAttribute("class").contains("grey-background"))){
+						productSizeButtonList.get(i+1).click();
+						return;
+					}
+				}
+			}
+
+		} catch (Exception e) {
+			Log.error("Exception in Class PDP_Action | Method productcode_MatchinMiniCart");
+			Log.error("Issue in matching product code in mini cart window");
+			throw (e);
+		}
+
+		}
 	public static void product_selectSize(List<WebElement> productSizeButtonList)
 			throws Exception {
 		

@@ -104,7 +104,7 @@ public class SS_CheckOut_RegisterAtCheckout_OrderUsingCC {
 			
 			CheckOut_Action.ProceedwithNewAddress(iTestCaseRow);
 			
-			//CheckOut_Action.PaymentOption(iTestCaseRow);
+			CheckOut_Action.PaymentOption(iTestCaseRow);
 
 			ExcelUtils.setCellData("Pass", iTestCaseRow, Constant.result);
 			Utils.captureScreenshot(sTestCaseName, "Pass", "Passed");

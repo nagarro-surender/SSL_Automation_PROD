@@ -9,8 +9,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
 import pageObjects.BaseClass;
 import pageObjects.Checkout_Page;
+import pageObjects.Home_Page;
 import appModules.CheckOut_Action;
 import appModules.FCC_Action;
 import appModules.HomePage_Action;
@@ -87,8 +89,12 @@ public class SS_FCC_Private_Verify_QuickBuyFCC_GuestUser {
 	public void main() throws Exception {
 		try {
 			
-		HomePage_Action.selectProductCategoryMainfromMenu(iTestCaseRow);
-		Log.info("Product categaory and subcategory selected successfull");
+		//HomePage_Action.selectProductCategoryMainfromMenu(iTestCaseRow);
+		//Log.info("Product categaory and subcategory selected successfull");
+			
+			Home_Page.Footer_Section.First_Citizen().click();
+			Log.info("FCC linked clicked from footer section successfully");
+		
 
 		FCC_Action.FCC_Verify_QuickBuyFCC_GuestUser_ViaHeaderLink(iTestCaseRow);
 		Log.info("FCC added to cart successfully");

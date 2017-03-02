@@ -188,7 +188,20 @@ public class Utils {
 		}
 
 	}
+	public static void SelectDropdownUpdated(WebElement mainElement) throws Exception {
+		try {
+			Log.info("Hovering mouse on the element");
+			
+			Select rob = new Select(mainElement);
+			rob.selectByIndex(0);
+			
+		} catch (Exception e) {
+			Log.error("Exception in Class Utils | Method mouseHover");
+			Log.error("Issue in hovering mouse on the element");
+			throw e;
+		}
 
+	}
 	
 	public static void mouseHoverAction(WebElement mainElement, WebElement subElement) throws Exception {
 		try {

@@ -826,6 +826,24 @@ public class Checkout_Page extends BaseClass {
 
 		}
 
+		public static WebElement WalletsOption() throws Exception {
+
+			try {
+				Log.info("Locating Wallets elements");
+				element = Driver
+						.findElement(By.xpath("//div[@class='payment-options']//li[contains(@class,'bank-wallets')]"));
+
+				Log.info("Wallets payment option is found on the checkout Page");
+
+			} catch (Exception e) {
+				Log.error("Exception in Class Checkout_Page | Method WalletsOption");
+				Log.error("Wallets payment option is not found on the checkout Page");
+				throw e;
+			}
+
+			return element;
+
+		}
 		public static WebElement CODOption() throws Exception {
 
 			try {
@@ -1103,6 +1121,24 @@ public class Checkout_Page extends BaseClass {
 
 		}
 
+		public static WebElement Wallets_SelectFromVisibleList(String bankName) throws Exception {
+
+			try {
+				Log.info("Locating Wallets_SelectFromVisibleList element");
+				element = Driver.findElement(By.xpath("//*[@id='bankWalletsForm']//*[@class='" + bankName + "']"));
+				
+				
+				Log.info("Entered Wallet option is found on the checkout Page");
+
+			} catch (Exception e) {
+				Log.error("Exception in Class Checkout_Page | Method Wallets_SelectFromVisibleList");
+				Log.error("Entered Wallet option is not found on the checkout Page");
+				throw e;
+			}
+
+			return element;
+
+		}
 		public static Select NetBanking_SelectFromDropdown() throws Exception {
 
 			try {
@@ -1132,6 +1168,24 @@ public class Checkout_Page extends BaseClass {
 			} catch (Exception e) {
 				Log.error("Exception in Class Checkout_Page | Method NetBanking_PlaceOrderBtn");
 				Log.error("NetBanking place order button is not found on the checkout Page");
+				throw e;
+			}
+
+			return element;
+
+		}
+
+		public static WebElement Wallet_PlaceOrderBtn() throws Exception {
+
+			try {
+				Log.info("Locating NetBanking_PlaceOrderBtn element");
+				element = Driver.findElement(By.xpath("//*[@id='orderSubmitBankWallets']"));
+
+				Log.info("Wallet place order button is found on the checkout Page");
+
+			} catch (Exception e) {
+				Log.error("Exception in Class Checkout_Page | Method Wallet_PlaceOrderBtn");
+				Log.error("Wallet place order button is not found on the checkout Page");
 				throw e;
 			}
 
