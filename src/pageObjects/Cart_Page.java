@@ -929,8 +929,12 @@ public class Cart_Page extends BaseClass {
 
 		try {
 			Log.info("Locating Pin Code Field on the cart page");
+			//element = Driver.findElement(By.xpath(
+					//"//section[@class='shopping-bag-wpr']//div[@class='col-md-3 col-lg-3 col-mobile pad-push order-summary']/descendant::form[@id='delivery_pincode_id']//input[@class='delivery_address_input']"));
+			
 			element = Driver.findElement(By.xpath(
-					"//section[@class='shopping-bag-wpr']//div[@class='col-md-3 col-lg-3 col-mobile pad-push order-summary']/descendant::form[@id='delivery_pincode_id']//input[@class='delivery_address_input']"));
+					"//section[@class='shopping-bag-wpr']//div[@class='col-md-9 col-lg-9 col-mobile shopping-bag-left']//*[@class='delivery-optn hidden-xs hidden-sm']/descendant::form[@id='delivery_pincode_id']//input[@class='delivery_address_input']"));
+
 			Log.info("Pin Code Field exist on the cart page");
 
 		} catch (Exception e) {
@@ -947,8 +951,11 @@ public class Cart_Page extends BaseClass {
 
 		try {
 			Log.info("Locating Check Pin Code button on the cart page");
+		//	element = Driver.findElement(By.xpath(
+		//			"//section[@class='shopping-bag-wpr']//div[@class='col-md-3 col-lg-3 col-mobile pad-push order-summary']/descendant::form[@id='delivery_pincode_id']//input[@value='CHECK PINCODE']"));
 			element = Driver.findElement(By.xpath(
-					"//section[@class='shopping-bag-wpr']//div[@class='col-md-3 col-lg-3 col-mobile pad-push order-summary']/descendant::form[@id='delivery_pincode_id']//input[@value='CHECK PINCODE']"));
+					"//section[@class='shopping-bag-wpr']//div[@class='col-md-9 col-lg-9 col-mobile shopping-bag-left']//*[@class='delivery-optn hidden-xs hidden-sm']/descendant::form[@id='delivery_pincode_id']//*[@Value='CHECK']"));
+
 			Log.info("Check Pin Code button exist on the cart page");
 
 		} catch (Exception e) {
@@ -965,8 +972,11 @@ public class Cart_Page extends BaseClass {
 
 		try {
 			Log.info("Locating Invalid Pin code alert on the cart page");
+			//element = Driver.findElement(By.xpath(
+			//		"//section[@class='shopping-bag-wpr']//div[@class='col-md-3 col-lg-3 col-mobile pad-push order-summary']//p[@id='invalidPinID']"));
 			element = Driver.findElement(By.xpath(
-					"//section[@class='shopping-bag-wpr']//div[@class='col-md-3 col-lg-3 col-mobile pad-push order-summary']//p[@id='invalidPinID']"));
+					"//section[@class='shopping-bag-wpr']//div[@class='col-md-9 col-lg-9 col-mobile shopping-bag-left']//*[@class='delivery-optn hidden-xs hidden-sm']//p[@id='invalidPinID']"));
+
 			Log.info("Invalid Pin code alert exist on the cart page");
 
 		} catch (Exception e) {
@@ -983,8 +993,11 @@ public class Cart_Page extends BaseClass {
 
 		try {
 			Log.info("Locating Change Pin code link on the cart page");
+			//element = Driver.findElement(By.xpath(
+			//		"//section[@class='shopping-bag-wpr']//div[@class='col-md-3 col-lg-3 col-mobile pad-push order-summary']/descendant::div[@class='pincode_display']/a"));
 			element = Driver.findElement(By.xpath(
-					"//section[@class='shopping-bag-wpr']//div[@class='col-md-3 col-lg-3 col-mobile pad-push order-summary']/descendant::div[@class='pincode_display']/a"));
+					"//section[@class='shopping-bag-wpr']//div[@class='col-md-9 col-lg-9 col-mobile shopping-bag-left']//*[@class='delivery-optn hidden-xs hidden-sm']/descendant::div[@class='pincode_display']/a"));
+
 			Log.info("Change Pin code link exist on the cart page");
 
 		} catch (Exception e) {
@@ -1001,8 +1014,11 @@ public class Cart_Page extends BaseClass {
 
 		try {
 			Log.info("Locating Delivery details for product on the cart page");
+			//elements = Driver.findElements(By.xpath(
+			//		"//section[@class='shopping-bag-wpr']//form[contains(@id,'updateCartForm')]/following-sibling::div[@class='delivary-time']"));
 			elements = Driver.findElements(By.xpath(
-					"//section[@class='shopping-bag-wpr']//form[contains(@id,'updateCartForm')]/following-sibling::div[@class='delivary-time']"));
+					"//*[@class='shopping-bag-wpr']//*[@class='shop-listing']//*[@class='col-md-3 col-sm-12 delivery-options']//ul"));
+
 			Log.info("Delivery details for product exist on the cart page");
 
 		} catch (Exception e) {
@@ -1019,8 +1035,11 @@ public class Cart_Page extends BaseClass {
 
 		try {
 			Log.info("Locating Free Delivery Icon on the cart page");
+		//	element = Driver.findElement(By.xpath(
+		//			"//section[@class='shopping-bag-wpr']//div[@class='user-static-info hidden-xs hidden-sm']/ul/li[1]"));
 			element = Driver.findElement(By.xpath(
-					"//section[@class='shopping-bag-wpr']//div[@class='user-static-info hidden-xs hidden-sm']/ul/li[1]"));
+					"//*[contains(@href,'delivery')]"));
+
 			Log.info("Free Delivery Icon exist on the cart page");
 
 		} catch (Exception e) {
@@ -1037,8 +1056,11 @@ public class Cart_Page extends BaseClass {
 
 		try {
 			Log.info("Locating Free In Store returns link on the cart page");
+			//element = Driver.findElement(By.xpath(
+			//		"//section[@class='shopping-bag-wpr']//div[@class='user-static-info hidden-xs hidden-sm']/ul/li[2]/span/a"));
 			element = Driver.findElement(By.xpath(
-					"//section[@class='shopping-bag-wpr']//div[@class='user-static-info hidden-xs hidden-sm']/ul/li[2]/span/a"));
+					"//*[contains(@href,'returns')]"));
+
 			Log.info("Free In Store returns link exist on the cart page");
 
 		} catch (Exception e) {
@@ -1055,8 +1077,11 @@ public class Cart_Page extends BaseClass {
 
 		try {
 			Log.info("Locating Any Questions? section exist on the cart page");
+		//	element = Driver.findElement(By.xpath(
+			//		"//section[@class='shopping-bag-wpr']//div[@class='user-static-info hidden-xs hidden-sm']/ul/li[3]"));
 			element = Driver.findElement(By.xpath(
-					"//section[@class='shopping-bag-wpr']//div[@class='user-static-info hidden-xs hidden-sm']/ul/li[3]"));
+					"   //div[@class='cp-footer']//*[@class='container container-responsive checkout-container']//*[@class='questions-call']"));
+
 			Log.info("Any Questions? section exist on the cart page");
 
 		} catch (Exception e) {

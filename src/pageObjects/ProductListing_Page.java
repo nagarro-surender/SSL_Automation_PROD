@@ -91,8 +91,10 @@ public class ProductListing_Page extends BaseClass {
 
 		try {
 			Log.info("Locating Product Item Count on PLP");
+			//element = Driver.findElement(By.xpath(
+				//	"//div[@class='heading-filter-sec']/descendant::div[@class='pro-list-heading margB20 col-md-12 text-center']/h4/span"));
 			element = Driver.findElement(By.xpath(
-					"//div[@class='heading-filter-sec']/descendant::div[@class='pro-list-heading margB20 col-md-12 text-center']/h4/span"));
+					"//div[@class='container']//*[@class='plpHeader hidden-sm hidden-xs']/h1"));
 			Log.info("Product Item Count found on PLP");
 
 		} catch (Exception e) {
@@ -105,6 +107,25 @@ public class ProductListing_Page extends BaseClass {
 
 	}
 
+	public static WebElement HeadingProductCount() throws Exception {
+
+		try {
+			Log.info("Locating Product Item Count with Product heading PLP");
+			//element = Driver.findElement(By.xpath(
+				//	"//div[@class='heading-filter-sec']/descendant::div[@class='pro-list-heading margB20 col-md-12 text-center']/h4/span"));
+			element = Driver.findElement(By.xpath(
+					"//div[@class='container']//*[@class='plpHeader hidden-sm hidden-xs']/h1"));
+			Log.info("Product Item Count with Product heading found on PLP");
+
+		} catch (Exception e) {
+			Log.error("Exception in Class ProductListing_Page | Method HeadingProductCount");
+			Log.error("Product Item Count with Product heading not found on PLP");
+			throw (e);
+		}
+
+		return element;
+
+	}
 	public static Select SortOptions() throws Exception {
 
 		try {
@@ -167,6 +188,57 @@ public class ProductListing_Page extends BaseClass {
 		} catch (Exception e) {
 			Log.error("Exception in Class ProductListing_Page | Method DefaultFilterContainer");
 			Log.error("Default Filter Container not found on PLP");
+			throw (e);
+		}
+
+		return element;
+
+	}
+	
+	public static WebElement ShowMoreLink() throws Exception {
+
+		try {
+			Log.info("Locating Show More Link on PLP ");
+			element = Driver.findElement(By.xpath("//*[@class='tab_content tabs_item-showing']/div[1]//*[@class='showMore']"));
+			Log.info("Show More Link found on PLP ");
+
+		} catch (Exception e) {
+			Log.error("Exception in Class ProductListing_Page | Method ShowMoreLink");
+			Log.error("Show More Link not found on PLP");
+			throw (e);
+		}
+
+		return element;
+
+	}
+	
+	public static WebElement ShowMoreLinkContent() throws Exception {
+
+		try {
+			Log.info("Locating Show More Link on PLP ");
+			element = Driver.findElement(By.xpath("//*[@class='tab_content tabs_item-showing']/div[1]"));
+			Log.info("Show More Link found on PLP ");
+
+		} catch (Exception e) {
+			Log.error("Exception in Class ProductListing_Page | Method ShowMoreLink");
+			Log.error("Show More Link not found on PLP");
+			throw (e);
+		}
+
+		return element;
+
+	}
+	
+	public static WebElement ShowLessLink() throws Exception {
+
+		try {
+			Log.info("Locating Show Less Link on PLP ");
+			element = Driver.findElement(By.xpath("//*[@class='tab_content']/div[1]//*[@class='showLess']"));
+			Log.info("Show Less Link found on PLP ");
+
+		} catch (Exception e) {
+			Log.error("Exception in Class ProductListing_Page | Method ShowMoreLink");
+			Log.error("Show Less Link not found on PLP");
 			throw (e);
 		}
 

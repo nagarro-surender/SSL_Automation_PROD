@@ -288,6 +288,36 @@ public class Static_Page extends BaseClass {
 		return element;
 	}
 
+	public static List<WebElement> SortByInfo()throws Exception {
+
+		try {
+			Log.info("Locating sort By information on PLP ");
+			webElements = Driver.findElements(By
+					.xpath(".//*[@class='plpHeader hidden-sm hidden-xs']/div[3]/ul/li"));
+			Log.info("Sort by element is present on PLP ");
+
+		} catch (Exception e) {
+			Log.error("Exception in Class ProductListing_Page | Method SortByInfo");
+			Log.error("Sort by element is not found on PLP");
+			throw (e);
+		}
+
+		return webElements;
+
+	}
+	public static WebElement SortByInfoText(int i) throws Exception {
+		try {
+			Log.info("Locating sort by elements information on PLP");
+			element = Driver.findElement(By.xpath(".//*[@class='plpHeader hidden-sm hidden-xs']/div[3]/ul/li["+i+"]"));
+			Log.info("sort by elementsfound on Home Page");
+
+		} catch (Exception e) {
+			Log.error("Exception in Class Static_Page | Method SortByInfoText");
+			Log.error("SortByInfoText does not exist on Home Page");
+			throw (e);
+		}
+		return element;
+	}
 	public static List<WebElement> SubMenuLinks(String title)throws Exception {
 		try {
 			Log.info("Locating SubMenuLinks elements");

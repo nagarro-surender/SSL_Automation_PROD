@@ -2,12 +2,14 @@ package appModules;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 
 import pageObjects.BaseClass;
 import pageObjects.ProductListing_Page;
+import pageObjects.Static_Page;
 import utility.Constant;
 import utility.ExcelUtils;
 import utility.Log;
@@ -16,8 +18,12 @@ import utility.Utils;
 public class PLP_Action {
 
 	public static void PLP_Verify_Default_Content(int iTestCaseRow) throws Exception {
-		Log.info("Verification for Default content on PLP page");
-
+Log.info("Verification for Default content on PLP page");
+        
+		String title1 = null;
+		List<String> testData=Utils.csvDataReader(ExcelUtils.getCellData(iTestCaseRow,Constant.title));	
+		System.out.println(Static_Page.SortByInfo().size());
+		System.out.println(testData.size());
 		Utils.waitForLoad(ExcelUtils.getCellData(iTestCaseRow, Constant.browser));
 		try {
 			Utils.verifyElement(ProductListing_Page.ProductCount());
@@ -26,19 +32,47 @@ public class PLP_Action {
 			Log.error("Product Item Count not found on PLP page");
 			BaseClass.errorValidation += "Product Item Count not found on PLP page \n";
 		}
+		
 		try {
-			Select dropDown=ProductListing_Page.SortOptions();
-			String defaultSort=dropDown.getFirstSelectedOption().getText();
-			//Utils.verifyElement(ProductListing_Page.SortOptions());
-			if(!(defaultSort.equals("Relevance"))){
-			BaseClass.errorValidation += "Sort option not selected by default on PLP page \n";
-			}
-			Log.info("Sort option found on PLP page");
+			Utils.verifyElement(ProductListing_Page.HeadingProductCount());
+			Log.info("Product Item Count with Product heading found on PLP page");
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			Log.error("Sort option not found on PLP page");
-			BaseClass.errorValidation += "Sort option not found on PLP page \n";
+			Log.error("Product Item Count with Product heading not found on PLP page");
+			BaseClass.errorValidation += "Product Item Count not found on PLP page \n";
 		}
+		//try {
+			//Select dropDown=ProductListing_Page.SortOptions();
+			//String defaultSort=dropDown.getFirstSelectedOption().getText();
+			//Utils.verifyElement(ProductListing_Page.SortOptions());
+			//if(!(defaultSort.equals("Relevance"))){
+			//BaseClass.errorValidation += "Sort option not selected by default on PLP page \n";
+			//}
+			//Log.info("Sort option found on PLP page");
+		//} catch (Exception e) {
+		//	System.out.println(e.getMessage());
+			//Log.error("Sort option not found on PLP page");
+		//	BaseClass.errorValidation += "Sort option not found on PLP page \n";
+		//}
+		try{
+			for (int i = 0; i < Static_Page.SortByInfo().size(); i++) {
+				title1 = Static_Page.SortByInfoText(i+1).getText();
+				System.out.println(testData.get(i));
+				System.out.println(Static_Page.SortByInfoText(i+1).getText());
+			
+				
+				if (!(title1.equals(testData.get(i)))) {
+					BaseClass.errorValidation += "Tool Tip for - " + title1 + " - does not match with expected values. \n";
+				}
+				else{
+					
+					Log.info("Tool Tip for - " + title1 + " - match with expected values.");
+				}
+			}
+			}
+			catch(Exception e){
+				Log.error(e.getMessage());
+				throw e;
+			}
 		try {
 			Utils.verifyElement(ProductListing_Page.GridViewIcon());
 			Log.info("Grid View Icon found on PLP page");
@@ -795,6 +829,62 @@ public class PLP_Action {
 		}
 	}
 
+	public static void PLP_Verify_ShowMoreShowLess_Links(int iTestCaseRow) throws Exception {
+		Log.info("Verification for ShowMoreShowLess links For product on PLP page");
+		
+	
+		
+		try {
+			ProductListing_Page.SelectBrandCheckbox(ExcelUtils.getCellData(iTestCaseRow, Constant.brandName))
+			.sendKeys(Keys.SPACE);
+			Utils.verifyElement(ProductListing_Page.ShowMoreLink());
+			ProductListing_Page.ShowMoreLink().click();
+			Thread.sleep(5000);
+			Log.info("Clciked on ShowMore link on Product image on PLP page");
+			Utils.verifyElement(ProductListing_Page.ShowLessLink());
+			ProductListing_Page.ShowLessLink().click();
+			Log.info("Clciked on ShowLess link on Product image on PLP page");
+			Thread.sleep(2000);
+			
+		} catch (Exception e) {
+			Log.error(e.getMessage());
+			BaseClass.errorValidation += "ShowMoreShowLess links not present on PLP\n";
+		}
+		
+if (!BaseClass.errorValidation.isEmpty()) {
+			Log.error("Exception in Class PLP_Action | Method PLP_Verify_ShowMoreShowLess_Links");
+			throw new Exception(BaseClass.errorValidation);
+		}
+	}
+
+	public static void PLP_Verify_ShowMoreShowLess_Functionlaity(int iTestCaseRow) throws Exception {
+		boolean check;
+		try {
+			ProductListing_Page.SelectBrandCheckbox(ExcelUtils.getCellData(iTestCaseRow, Constant.brandName))
+			.sendKeys(Keys.SPACE);
+			check = Utils.CheckEnability(ProductListing_Page.ShowMoreLinkContent());
+			if (!check) {
+				BaseClass.errorValidation += "Show More link not present on PLP while it should be present \n";
+			}
+
+			ProductListing_Page.SelectBrandCheckbox(ExcelUtils.getCellData(iTestCaseRow, Constant.productPrice))
+			.sendKeys(Keys.SPACE);	
+			Utils.waitForLoad(ExcelUtils.getCellData(iTestCaseRow, Constant.browser));
+			//check = Utils.CheckEnability(ProductListing_Page.ShowMoreLinkContent());
+			if (check) {
+				BaseClass.errorValidation += "Show More link present on PLP while it should not be present \n";
+			}
+        
+		    System.out.println("Show More Show Less link not present when double L3 category selected");
+			Log.info("Verification for Show More Show Less Functionality completed on PLP page");
+
+		} catch (Exception e) {
+			Log.error(e.getMessage());
+			Log.error("Exception in Class PLP_Action | Method PLP_Verify_ShowMoreShowLess_Functionlaity");
+			throw e;
+		}
+
+	}
 	public static void PLP_Verify_RemoveFromWishlist_RegisteredUser(int iTestCaseRow) throws Exception {
 		Log.info("Verification for Registered user links in QuickView on PLP page");
 

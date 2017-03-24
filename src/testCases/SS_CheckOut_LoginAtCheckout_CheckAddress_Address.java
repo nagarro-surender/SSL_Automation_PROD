@@ -98,9 +98,9 @@ public class SS_CheckOut_LoginAtCheckout_CheckAddress_Address {
 			CheckOut_Action.ProceedwithNewAddressNoAddress(iTestCaseRow);
 			
 			//CheckOut_Action.PaymentOption(iTestCaseRow);
-			//ExcelUtils.setCellData("Pass", iTestCaseRow, Constant.result);
-			//Utils.captureScreenshot(sTestCaseName, "Pass", "Passed");
-			//Log.info("Payment successful using netbanking after login at checkout");
+			ExcelUtils.setCellData("Pass", iTestCaseRow, Constant.result);
+			Utils.captureScreenshot(sTestCaseName, "Pass", "Passed");
+			Log.info("Payment successful using netbanking after login at checkout");
 
 		} catch (Exception e) {
 			Log.error("Issue in making payment using netbanking");

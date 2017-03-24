@@ -129,7 +129,8 @@ public class CheckOut_Action {
 				Checkout_Page.DeliveryAddress.AddNewAddressBtn().click();
 				Log.info("Add new address button is clicked successfully");
 			}
-
+			Checkout_Page.DeliveryAddress.firstName().clear();
+			Checkout_Page.DeliveryAddress.lastName().clear();
 			//String firstName = ExcelUtils.getCellData(iTestCaseRow, Constant.firstName);
 			//Checkout_Page.DeliveryAddress.firstName().sendKeys(firstName);
 			//Log.info("First name is entered successfully");
@@ -225,7 +226,8 @@ public class CheckOut_Action {
 				Checkout_Page.DeliveryAddress.AddNewAddressBtn().click();
 				Log.info("Add new address button is clicked successfully");
 			}
-
+			Checkout_Page.DeliveryAddress.firstName().clear();
+			Checkout_Page.DeliveryAddress.lastName().clear();
 			String firstName = ExcelUtils.getCellData(iTestCaseRow, Constant.firstName);
 			Checkout_Page.DeliveryAddress.firstName().sendKeys(firstName);
 			Log.info("First name is entered successfully");
@@ -323,7 +325,8 @@ public class CheckOut_Action {
 				Checkout_Page.DeliveryAddress.AddNewAddressBtn().click();
 				Log.info("Add new address button is clicked successfully");
 			}
-			
+			Checkout_Page.DeliveryAddress.firstName().clear();
+			Checkout_Page.DeliveryAddress.lastName().clear();
 		
 			try {
 				Checkout_Page.DeliveryAddress.SaveandContinueBtn().click();
@@ -457,7 +460,8 @@ public class CheckOut_Action {
 				Checkout_Page.DeliveryAddress.AddNewAddressBtn().click();
 				Log.info("Add new address button is clicked successfully");
 			}
-
+			Checkout_Page.DeliveryAddress.firstName().clear();
+			Checkout_Page.DeliveryAddress.lastName().clear();
 			String firstName = ExcelUtils.getCellData(iTestCaseRow, Constant.firstName);
 			Checkout_Page.DeliveryAddress.firstName().sendKeys(firstName);
 			Log.info("First name is entered successfully");
@@ -557,7 +561,8 @@ public class CheckOut_Action {
 				Checkout_Page.DeliveryAddress.AddNewAddressBtn().click();
 				Log.info("Add new address button is clicked successfully");
 			}
-
+			Checkout_Page.DeliveryAddress.firstName().clear();
+			Checkout_Page.DeliveryAddress.lastName().clear();
 			String firstName = ExcelUtils.getCellData(iTestCaseRow, Constant.firstName);
 			Checkout_Page.DeliveryAddress.firstName().sendKeys(firstName);
 			Log.info("First name is entered successfully");
@@ -657,7 +662,8 @@ public class CheckOut_Action {
 				Checkout_Page.DeliveryAddress.AddNewAddressBtn().click();
 				Log.info("Add new address button is clicked successfully");
 			}
-
+			Checkout_Page.DeliveryAddress.firstName().clear();
+			Checkout_Page.DeliveryAddress.lastName().clear();
 			String firstName = ExcelUtils.getCellData(iTestCaseRow, Constant.firstName);
 			Checkout_Page.DeliveryAddress.firstName().sendKeys(firstName);
 			Log.info("First name is entered successfully");
@@ -747,7 +753,8 @@ public class CheckOut_Action {
 				Checkout_Page.DeliveryAddress.AddNewAddressBtn().click();
 				Log.info("Add new address button is clicked successfully");
 			}
-
+			Checkout_Page.DeliveryAddress.firstName().clear();
+			Checkout_Page.DeliveryAddress.lastName().clear();
 			String firstName = ExcelUtils.getCellData(iTestCaseRow, Constant.firstName);
 			Checkout_Page.DeliveryAddress.firstName().sendKeys(firstName);
 			Log.info("First name is entered successfully");

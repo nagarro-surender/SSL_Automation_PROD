@@ -1177,7 +1177,7 @@ public static void CheckMiniCartShippingCostFinal(int iTestCaseRow) throws Excep
 				BaseClass.errorValidation += "Delivery Details does not exist for product. \n";
 			}
 			if (!(Cart_Page.DeliveryDetails().get(0).getText()
-					.equals("Product cannot be delivered in this location"))) {
+					.equals("Product cannot be delivered in this location."))) {
 				BaseClass.errorValidation += "'Product cannot be delivered in this location'- is not displayed. \n";
 			}
 		} catch (Exception e) {

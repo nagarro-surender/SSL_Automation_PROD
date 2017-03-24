@@ -470,7 +470,7 @@ public class HomePage_Action {
 			Utils.performAssertEquals(Home_Page.headerWishlistMenuHeading(), "Your Saved Items Are Empty");
 
 			System.out.println(Home_Page.headerWishlistMenuText().getText());
-			Utils.performAssertEquals(Home_Page.headerWishlistMenuText(), "Please LOGIN or REGISTER to add a products");
+			Utils.performAssertEquals(Home_Page.headerWishlistMenuText(), "Please LOGIN or REGISTER to add products");
 
 			Log.info("Verification check done for Wishlist Alert functionality");
 
@@ -789,6 +789,21 @@ public class HomePage_Action {
 		}
 	}
 
+	public static void selectProductCategoryfromMenuFilter(int iTestCaseRow) throws Exception {
+		try {
+
+			String menu = ExcelUtils.getCellData(iTestCaseRow, Constant.productCategory);
+			String submenu = ExcelUtils.getCellData(iTestCaseRow, Constant.productSubCategory);
+			Utils.mouseHoverAction(Home_Page.menuCategory(menu), Home_Page.menuSubCategoryFilter(menu, submenu));
+			Log.info("Product Category selected");
+		} catch (Exception e) {
+			Log.error("Exception in Class HomePage_Action | Method selectProductCategoryfromMenu");
+			Log.error("Product category not selected");
+
+			throw (e);
+
+		}
+	}
 	public static void FooterLinkVerification_FollowUs_Public(int iTestCaseRow) throws Exception {
 		try {
 			//Utils.scrollingToPageElementByCordinate(1259, 6250);
